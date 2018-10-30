@@ -20,6 +20,6 @@ const page = (events) => ["div.website",
 			  ["ul", ["li", ...events.map(eObj => event(eObj))]]];
 
 
-const website = (events) => z.doc([z.css("ui.css")], [page(events)]);
+const website = (events) => z.doc([["meta", {charset: "utf-8"}], z.css("ui.css")], [page(events)]);
 
 export { website };
