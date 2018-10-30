@@ -1,0 +1,22 @@
+[
+    {"title": "The Kitchen CAN",
+     "date": "October 30, 2018",
+     "location": {"venue": "BHub, Trivandrum", "lat": "", "lon": ""},
+     "url": "https://bhubglobal.com/event/the-kitchen-can-trivandrum-edition-3/"},
+
+    {"title": "AI Series - Week - 2",
+     "date": "November 3, 2018",
+     "location": {"venue": "BHub, Trivandrum", "lat": "", "lon": ""},
+     "url": "https://bhubglobal.com/event/ai-series-week-2/"},
+
+    {"title": "Blockchain Interactive Session",
+     "date": "November 3, 2018",
+     "location": {"venue": "BHub, Trivandrum", "lat": "", "lon": ""},
+     "url": "https://www.meetup.com/Built-on-Blockchain-Kochi/events/255507374/"},
+
+    {"title": "Maker Fest",
+     "date": "November 3, 2018",
+     "location": {"venue": "Amar Jyothi College, Kanjirappally", "lat": "", "lon": ""},
+     "url": "https://www.meetup.com/makerfestkochi/events/255928123/"}
+
+]

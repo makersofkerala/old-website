@@ -1,4 +1,4 @@
-import * as f from './fun.js';
+import * as f from './fun.mjs';
 
 /* Checks */
 
@@ -241,6 +241,7 @@ const nodeToText = (normalizedNode, state) => {
 
     let {key, tag, attrs, contents} = normalizedNode;
 
+
     if(key) { attrs = Object.assign(attrs, {data: {key}}); };
 
     if(!tag) throw Error("Please provide a tag");
@@ -248,14 +249,16 @@ const nodeToText = (normalizedNode, state) => {
     let newAttrs = f.dissoc(attrs, "events");
 
     let attrsStr = attrsToStr(newAttrs);
-    
-    return `<${tag}${(attrsStr) ? " " + attrsStr : ""}>${contents.map((n, i) => {
+
+    let children = tag === "textNode" ? contents[0] : contents.map((n, i) => {
 
      if(key) key.push(i);
 
-      return serialize(n, {state, withKeys: (key != null)});
+      return nodeToText(n, state);
 
-}).join("")}</${tag}>`;
+}).join("");
+    
+    return `<${tag}${(attrsStr) ? " " + attrsStr : ""}>${children}</${tag}>`;
 
 };
 

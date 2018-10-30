@@ -3,12 +3,12 @@
     padding: 0;
 }
 
-body{
+body {
     font-family: "Work Sans";
     background: #F6F9FC;
 }
 
-ul{
+ul {
     list-style-type:none;
 }
 
@@ -16,13 +16,18 @@ a {
     text-decoration: none;
     color: black;
 }
-.event-name{
+
+.event-name {
     font-weight: 500;
     margin-bottom: 4px;
 }
-.event-list{
-width: 50%;
 
+.event-month {
+    text-transform: uppercase;
+}
+
+.event-list {
+    width: 50%;
 }
 
 .website {
@@ -56,43 +61,33 @@ width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-   align-items:center;
-   width: 50px;
-   margin-right: 10px;
-   background: #3e7adc14;
+    align-items:center;
+    width: 50px;
+    margin-right: 10px;
+    background: #3e7adc14;
 
-  color:  #3F7ADC
+    color:  #3F7ADC
 }
 
 .event-details{
     width: 200px;
 }
 
-.event-block{
+.event-block {
     display: flex;
     padding: 20px;
     background: white;
     align-items: center;
     margin-block: 20px;
-
-
-    /* Rectangle 6 */
-
-/* Rectangle 6 */
-
-
-
-
-box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.5);
-border-radius: 8px;
-
-
+    box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.5);
+    border-radius: 8px;
+    transition: 0.15s box-shadow ease;
 }
 
 .event-block:hover{
-  
+    
 
-box-shadow: 0px 10px 12px rgba(196, 207, 218, 0.5);
+    box-shadow: 0px 10px 12px rgba(196, 207, 218, 0.5);
 }
 
 .event-location{
