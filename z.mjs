@@ -250,15 +250,17 @@ const nodeToText = (normalizedNode, state) => {
 
     let attrsStr = attrsToStr(newAttrs);
 
-    let children = tag === "textNode" ? contents[0] : contents.map((n, i) => {
+    let htmlText = (children) => `<${tag}${(attrsStr) ? " " + attrsStr : ""}>${children}</${tag}>`;
+
+    let children = (tag === "textNode") ? contents[0] : contents.map((n, i) => {
 
      if(key) key.push(i);
 
       return nodeToText(n, state);
 
 }).join("");
-    
-    return `<${tag}${(attrsStr) ? " " + attrsStr : ""}>${children}</${tag}>`;
+
+	return htmlText(children);
 
 };
 
