@@ -231,3 +231,13 @@ h1 em {
     opacity: 0.5;
     margin-bottom: 20px;
 }
+
+.circle {
+
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: slateblue;
+    border-radius: 8px;
+    
+}

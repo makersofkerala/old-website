@@ -48,10 +48,8 @@ const page = (events) => ["div.website",
 ["div.boards",
 ["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
 ["ul", ...events.map(eObj => event(eObj))],
-["div", ["img", {src: "map.svg"}]]
-],
-["footer", "test"]
-];
+["div#map", {style: {position: "relative"}}, ["img", {src: "map.svg", data: {points: "[" + events.map(({location: {lat, lon}}) => `[${lat},${lon}]`) + "]"}}]]],
+["footer", "test"]];
 
 
 const website = (events) => z.doc([["meta", {name: "title", "content": "Makers of Kerala: Uniting product makers all over Kerala, India"}],
@@ -60,6 +58,7 @@ const website = (events) => z.doc([["meta", {name: "title", "content": "Makers o
 ["meta", {name: "viewport", content: "width=device-width, initial-scale=1"}],
 ["title", "Makers of Kerala - Maker Calendar"],
 ["link", {href: "https://fonts.googleapis.com/css?family=Work+Sans:400,600", rel:"stylesheet"}],
-z.css("ui.css")], [page(events)]);
+z.css("ui.css"),
+["script", {src: "ui.js", type: "text/javascript"}]], [page(events)]);
 
 export { website };

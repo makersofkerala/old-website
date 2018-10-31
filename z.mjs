@@ -223,7 +223,7 @@ const attrsToStr = attrs => {
 
 	} else if(k == "data") {
 
-	    return Object.entries(v).map(([key, val]) => dataPair(k,key,val));
+	    return Object.entries(v).map(([key, val]) => dataPair(k,key,val).join("="));
 	    
 	} else {
 
