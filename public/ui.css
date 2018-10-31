@@ -86,21 +86,7 @@ header#main h2 {
     font-weight: 600;
 }
 
-.event-date{
-    /* border: 2px solid #9FB3D4; */
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    width: 50px;
-    margin-right: 10px;
-    background: #3e7adc14;
 
-    color:  #3F7ADC
-}
 
 .event-details{
     width: 200px;
@@ -183,19 +169,11 @@ h1 em {
     padding: 5px;
     margin: 5px;
     display: flex;
-    text-shadow: 1px 1px 4px #00000045;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50px;
     margin-right: 10px;
-    background: #00000014;
-    color: #ffffff;
-    position: absolute;
-    z-index: 1;
-    top: 15px;
-    left: 10px;
-    border: 2px solid white;
 }
 
 .past-event-date{
@@ -203,14 +181,11 @@ h1 em {
     padding: 5px;
     margin: 5px;
     display: flex;
-    text-shadow: 1px 1px 4px #00000045;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50px;
     margin-right: 10px;
-    background: #00000014;
-    color: #ffffff;
 
     z-index: 1;
    

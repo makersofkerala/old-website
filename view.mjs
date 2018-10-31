@@ -8,10 +8,11 @@ const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "
     const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
     
     return ["li", ["a.event-board", {href: url},
-    ["div.event-date", ["p.event-day", day], ["p.event-month", month], ["p.event-year", year]],
         ["img.event-cover", {src:"cover.png"}],
         ["div.event-block",
-	    
+         ["div.event-date", ["p.event-day", day], ["p.event-month", month], 
+        //  ["p.event-year", year]
+        ],
 	    ["div.event-details",  ["div.event-name", title],
 	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "location.svg"}], venue]],
 	    ["div", "→ "]]]];
@@ -29,7 +30,9 @@ const pastEvent = ({title = "Untitled Event", location: {lat, long, venue}, date
     
         // ["img.event-cover", {src:"cover.png"}],
         ["div.past-event-block",
-	    ["div.past-event-date", ["p.event-day", day], ["p.event-month", month], ["p.event-year", year]],
+        ["div.past-event-date", ["p.event-day", day], ["p.event-month", month], 
+        // ["p.event-year", year]
+    ],
 	    ["div.event-details",  ["div.event-name", title],
 	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "location.svg"}], venue]],
 	    ["div", "→ "]]]];
