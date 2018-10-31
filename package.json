@@ -5,11 +5,10 @@
   "main": "server.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node --experimental-modules server.mjs",
-      "build": "node --experimental-modules gen.mjs"
-
+    "start": "node --experimental-modules server.mjs",
+    "build": "node --experimental-modules gen.mjs"
   },
-  "author": "bunchaeffinamateurs <bunchaeffinamateurs@gmail.com>",
+  "author": "studiobofa <studiobofa@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "tanmatra": "0.0.2",
