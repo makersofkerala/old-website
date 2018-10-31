@@ -251,15 +251,13 @@ const nodeToText = (normalizedNode, state) => {
 
     let htmlText = (children) => `<${tag}${(attrsStr) ? " " + attrsStr : ""}>${children}</${tag}>`;
 
-    let children = (tag === "textNode") ? contents[0] : contents.map((n, i) => {
+    return (tag === "textNode") ? contents[0] : htmlText(contents.map((n, i) => {
 
-     if(key) key.push(i);
+	if(key) key.push(i);
 
-      return nodeToText(n, state);
+	return nodeToText(n, state);
 
-}).join("");
-
-	return htmlText(children);
+    }).join(""));
 
 };
 
@@ -490,7 +488,7 @@ const doc = (head = "", body = "") => {
 
 };
 
-const css = link => serialize(["link", {rel: "stylesheet", type: "text/css", href: link}]);
+const css = link => ["link", {rel: "stylesheet", type: "text/css", href: link}];
 
 const nodejsZ = {serialize, doc, css, isNode};
 
