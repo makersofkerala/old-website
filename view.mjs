@@ -22,9 +22,10 @@ const page = (events) => ["div.website",
 ["ul", ["li", ...events.map(eObj => event(eObj))]]];
 
 
-const website = (events) => z.doc([["meta", {name: "title", "content": "Makers of Kerala"}],
+const website = (events) => z.doc([["meta", {name: "title", "content": "Makers of Kerala: Uniting product makers all over Kerala, India"}],
 ["meta", {name: "description", content: "A website to unite the daring makers in the digital domain all across the Kerala, India. Makers of Kerala is designed as a platform that catalogues the team, stack, and chronicles the timeline of startups from Kerala. It's overarching goal is to chronicle the unfolding narrative of the startup scene of Kerala."}],
 ["meta", {charset: "utf-8"}],
+["title", "Makers of Kerala - Maker Calendar"],
 ["link", {href: "https://fonts.googleapis.com/css?family=Work+Sans:400,600", rel:"stylesheet"}],
 z.css("ui.css")], [page(events)]);
 
