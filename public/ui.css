@@ -37,9 +37,36 @@ a {
     align-items: center;
 }
 
-.logo{
-    width: 300px;
-    margin: 40px;
+.logo img {
+    flex: 1 0 auto;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin-right: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.logo h1 {
+
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    
+}
+
+header#main h2 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: #3F7ADC;
+    
+}
+
+.logo {
+    margin: 2rem;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
 }
 
 .location-icon{
@@ -75,11 +102,11 @@ a {
 
 .event-block {
     display: flex;
-    padding: 20px;
+    padding: 1rem 1.25rem;
     background: white;
     align-items: center;
     margin-block: 20px;
-    box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.5);
+    box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.45);
     border-radius: 8px;
     transition: 0.15s box-shadow ease;
 }
@@ -87,12 +114,32 @@ a {
 .event-block:hover{
     
 
-    box-shadow: 0px 10px 12px rgba(196, 207, 218, 0.5);
+    box-shadow: 0px 10px 12px rgba(196, 207, 218, 0.45);
 }
 
-.event-location{
+.event-location {
     opacity: 0.5;
     display: flex;
     align-items: center;
+}
+
+h1 .light {
+
+    font-weight: normal;
+    color: #3F7ADC;
+    
+}
+
+h1 {
+    font-weight: bold;
+    color: #78CD80;
+}
+
+h1 em {
+    font-family: "Baskerville", sans-serif;
+    font-style: italic;
+    font-weight: 200;
+    padding: 0 0.75rem 0 0.25rem;
+    color: #30BEFA;
 }
 
