@@ -241,7 +241,6 @@ const nodeToText = (normalizedNode, state) => {
 
     let {key, tag, attrs, contents} = normalizedNode;
 
-
     if(key) { attrs = Object.assign(attrs, {data: {key}}); };
 
     if(!tag) throw Error("Please provide a tag");
