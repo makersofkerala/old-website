@@ -40,18 +40,25 @@ const pastEvent = ({title = "Untitled Event", location: {lat, long, venue}, date
 };
 
 const page = (events) => ["div.website", 
-["header#main", ["div.logo",["img", {alt: "Makers of Kerala Logo", src: "logo.svg"}],
-["h1", ["span.light","Makers"], ["em","of"], "Kerala"]],
-],
-["h2.website-description", "List of events happening over all over Kerala"],
+// ["header#main", ["div.logo",["img", {alt: "Makers of Kerala Logo", src: "logo.svg"}],
+// ["h1", ["span.light","Makers"], ["em","of"], "Kerala"]],
+// ],
+// ["h2.website-description", "List of events happening over all over Kerala"],
 // ["button", " + Add a new event"],
 // ["form", ["input", ],
 // ["input", ],
 // ["input", ] ],
-["div.boards",
-["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
-["ul", ...events.map(eObj => event(eObj))],
-["div", ["img", {src: "map.svg"}]]
+["div.main-sections",
+// ["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
+["div.website-details", 
+["div.logo",["img", {alt: "Makers of Kerala Logo", src: "logo.svg"}],
+["h1", ["span.light","Makers"], ["em","of"], "Kerala"]],
+
+["div", "Signup for our newletter to get the latest updates in the Kerala Startup Scene."],
+["input", ""]
+],
+["ul.event-list", ...events.map(eObj => event(eObj))],
+["div.map", ["img", {src: "map.svg"}]]
 ],
 ["footer", "test"]
 ];

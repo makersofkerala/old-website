@@ -41,20 +41,13 @@ a {
 }
 
 .logo img {
-    flex: 1 0 auto;
-    display: flex;
     width: 80px;
     height: 80px;
-    margin-right: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
 }
 
 .logo h1 {
 
     font-size: 1.6rem;
-    margin: 2rem 0;
     
 }
 
@@ -67,13 +60,6 @@ header#main h2 {
     
 }
 
-.logo {
-    margin: 2rem;
-    margin-bottom: 0;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-}
 
 .location-icon{
     width: 14px;
@@ -191,9 +177,11 @@ h1 em {
    
 }
 
-.boards{
+.main-sections{
     display: flex;
     height: 100%;
+    width: 100%;
+    justify-content: center;
 }
 
 .past-events-collection{
@@ -205,4 +193,30 @@ h1 em {
     font-weight: 200;
     opacity: 0.5;
     margin-bottom: 20px;
+}
+
+.website-details{
+    width: 30%;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.logo{
+    margin-bottom: 50px;
+}
+
+.map img{
+width: 100%;
+}
+
+.map {
+    width: 30%;
+    align-self: center;
+    box-sizing: border-box;
+    padding: 50px;
+}
+
+.event-list {
+    width: 40%;
+    max-width: 400px;
 }
