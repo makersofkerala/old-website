@@ -7,19 +7,51 @@ const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "
     const month = monthFormat.format(parsedDate);
     const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
     
-    return ["a.event-block", {href: url},
-	    ["div.event-date", ["p.event-day", day], ["p.event-month", month], ["p.event-year", year]],
+    return ["li", ["a.event-board", {href: url},
+    ["div.event-date", ["p.event-day", day], ["p.event-month", month], ["p.event-year", year]],
+        ["img.event-cover", {src:"cover.png"}],
+        ["div.event-block",
+	    
 	    ["div.event-details",  ["div.event-name", title],
 	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "location.svg"}], venue]],
-	    ["div", "→ "]];
+	    ["div", "→ "]]]];
+
+};
+
+const pastEvent = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = ""}) => {
+
+    const parsedDate = new Date(Date.parse(date));
+    const monthFormat = new Intl.DateTimeFormat("en-US", {month: "short"});
+    const month = monthFormat.format(parsedDate);
+    const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
+    
+    return ["li", ["a.past-event-board", {href: url},
+    
+        // ["img.event-cover", {src:"cover.png"}],
+        ["div.past-event-block",
+	    ["div.past-event-date", ["p.event-day", day], ["p.event-month", month], ["p.event-year", year]],
+	    ["div.event-details",  ["div.event-name", title],
+	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "location.svg"}], venue]],
+	    ["div", "→ "]]]];
 
 };
 
 const page = (events) => ["div.website", 
 ["header#main", ["div.logo",["img", {alt: "Makers of Kerala Logo", src: "logo.svg"}],
 ["h1", ["span.light","Makers"], ["em","of"], "Kerala"]],
-["h2", "Events worth attending"]],
-["ul", ["li", ...events.map(eObj => event(eObj))]]];
+],
+["h2.website-description", "List of events happening over all over Kerala"],
+// ["button", " + Add a new event"],
+// ["form", ["input", ],
+// ["input", ],
+// ["input", ] ],
+["div.boards",
+["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
+["ul", ...events.map(eObj => event(eObj))],
+["div", ["img", {src: "map.svg"}]]
+],
+["footer", "test"]
+];
 
 
 const website = (events) => z.doc([["meta", {name: "title", "content": "Makers of Kerala: Uniting product makers all over Kerala, India"}],

@@ -10,6 +10,8 @@ body {
 
 ul {
     list-style-type:none;
+    height: 100%;
+    overflow: scroll;
 }
 
 a {
@@ -35,6 +37,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .logo img {
@@ -59,11 +62,14 @@ header#main h2 {
     font-weight: 400;
     font-size: 1.25rem;
     color: #3F7ADC;
+    display: flex;
+    justify-content: center;
     
 }
 
 .logo {
     margin: 2rem;
+    margin-bottom: 0;
     display: flex;
     flex-flow: row;
     align-items: center;
@@ -105,13 +111,38 @@ header#main h2 {
     padding: 1rem 1.25rem;
     background: white;
     align-items: center;
+    
+    
+}
+
+.past-event-block{
+    display: flex;
+    padding: 1rem 1.25rem;
+
+    align-items: center;
+    
+    transition: 0.15s box-shadow ease; 
+}
+.event-board{
     margin: 20px;
-    box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.45);
+    position: relative;
+    display: block;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.45);
+    margin-bottom: 40px;
     transition: 0.15s box-shadow ease;
 }
 
-.event-block:hover{
+.past-event-board{
+    margin: 20px;
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.event-board:hover{
     
 
     box-shadow: 0px 10px 12px rgba(196, 207, 218, 0.45);
@@ -123,6 +154,10 @@ header#main h2 {
     align-items: center;
 }
 
+.event-cover{
+    display: block;
+    filter: sepia(100%) saturate(70%) brightness(80%) hue-rotate(-200deg);
+}
 h1 .light {
 
     font-weight: normal;
@@ -143,3 +178,56 @@ h1 em {
     color: #30BEFA;
 }
 
+.event-date{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    text-shadow: 1px 1px 4px #00000045;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin-right: 10px;
+    background: #00000014;
+    color: #ffffff;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    left: 10px;
+    border: 2px solid white;
+}
+
+.past-event-date{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    text-shadow: 1px 1px 4px #00000045;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin-right: 10px;
+    background: #00000014;
+    color: #ffffff;
+
+    z-index: 1;
+   
+}
+
+.boards{
+    display: flex;
+    height: 100%;
+}
+
+.past-events-collection{
+    opacity: 0.5;
+}
+
+.website-description{
+    font-size: 12pt;
+    font-weight: 200;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
