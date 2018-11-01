@@ -1,5 +1,9 @@
 import * as z from './z.mjs';
 
+const og = (props) => Object.entries(props).map(([k,v]) => ["meta", {property: `og:${k}`, content: `${v}`}]);
+
+const twitter = (props) => Object.entries(props).map(([k,v]) => ["meta", {name: `twitter:${k}`, content: `${v}`}]);
+
 const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = ""}) => {
 
     const parsedDate = new Date(Date.parse(date));
@@ -67,13 +71,19 @@ const website = (events) => z.doc([["meta", {name: "title", "content": "Makers o
 ["meta", {name: "description", content: "A website to unite the daring makers in the digital domain all across the Kerala, India. Makers of Kerala is designed as a platform that catalogues the team, stack, and chronicles the timeline of startups from Kerala. It's overarching goal is to chronicle the unfolding narrative of the startup scene of Kerala."}],
 ["meta", {charset: "utf-8"}],
 ["meta", {name: "viewport", content: "width=device-width, initial-scale=1"}],
+...og({url: "https://makersofkerala.com/",
+title: "Makers of Kerala: Uniting makers in Gods' own country",
+type: "website",
+description: "Makers of Kerala is a catalogue the team, stack, and chronicles the timeline of startups from Kerala. It's overarching goal is to chronicle the unfolding narrative of the startup scene of Kerala.",
+image: "https://makersofkerala.com/meta-card.png"}),
+...twitter({"card": "summary_large_image", creator: "@studiobofa"}),
 ["link", {rel: "shortcut icon", type: "image/png", href: "/favicon-16.png", sizes: "16x16"}],
 ["link", {rel: "shortcut icon", type: "image/png", href: "/favicon-32.png", sizes: "32x32"}],
 ["script", {async: true, src:"https://www.googletagmanager.com/gtag/js?id=UA-128502139-1"}],
 ["script",
-  `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
   gtag('config', 'UA-128502139-1');`],
 ["script", {type:"text/javascript"}, `(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,

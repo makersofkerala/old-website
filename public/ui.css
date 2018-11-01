@@ -127,9 +127,10 @@ header#main h2 {
     align-items: center;
 }
 
-.event-cover{
+.event-cover {
     display: block;
-    filter: sepia(100%) saturate(100%) brightness(100%) contrast(120%)  hue-rotate(-200deg)
+    background-blend-mode: multiply;
+    background-color: #5373DC;
 }
 h1 .light {
 
