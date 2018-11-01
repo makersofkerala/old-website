@@ -300,6 +300,7 @@ width: 100%;
     cursor: pointer;
     display: flex;
     padding: 1rem;
+  
 }
 
 .copyright {
@@ -387,5 +388,17 @@ width: 100%;
     
     .website-description{
         margin-bottom: 0;
+    }
+
+    .sign-up-helper {
+        display: none;
+    }
+    .signup-button {
+        padding: 0.5rem;
+        justify-content: center;
+    }
+    .signup-pull{
+        justify-content: center;
+    display: flex;
     }
 }
