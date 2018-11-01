@@ -58,6 +58,18 @@ const init = () => {
     map.onload = () => { plotPoints(points); }
 
     window.addEventListener("resize", () => plotPoints(points));
+
+    document.querySelector(".whatsapp-group signup-button", () => {
+	mixpanel.track("Whatsapp Group Signup");
+    });
+
+    document.querySelector(".telegram-broadcast signup-button", () => {
+	mixpanel.track("Telegram Broadcast Signup");
+    });
+
+    document.querySelector(".studiobofa-link", () => {
+	mixpanel.track("StudioBOFA link click");
+    });
     
 }
 
