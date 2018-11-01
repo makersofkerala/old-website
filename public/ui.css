@@ -133,7 +133,16 @@ header#main h2 {
     flex: 1 1 auto;
     object-fit: cover;
 }
+.event-text-cover {
+    height: 120px;
+    background:#88ceec;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-size: 36px;
 
+}
 h1 .light {
 
     font-weight: normal;
@@ -197,6 +206,7 @@ h1 em {
     font-weight: 200;
     opacity: 0.8;
     margin-top: 10px;
+    margin-bottom: 70px;
 }
 
 .website-details{
@@ -290,6 +300,7 @@ width: 100%;
     cursor: pointer;
     display: flex;
     padding: 1rem;
+  
 }
 
 .copyright {
@@ -346,7 +357,7 @@ width: 100%;
     }
 
     .newsletter-signup {
-        display: none;
+
     }
 
     .copyright {
@@ -357,4 +368,37 @@ width: 100%;
         padding-top: 0px;
     }
     
+    .website-details {
+        flex: 1 0 auto;
+        width: 100%;
+        padding: 0px 10px;
+    }
+
+    .logo {
+        margin: 20px 0px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo h1 {
+        display: none;
+    }
+    
+    .website-description{
+        margin-bottom: 0;
+    }
+
+    .sign-up-helper {
+        display: none;
+    }
+    .signup-button {
+        padding: 0.5rem;
+        justify-content: center;
+    }
+    .sign-up-pull{
+        justify-content: center;
+    display: flex;
+    }
 }
