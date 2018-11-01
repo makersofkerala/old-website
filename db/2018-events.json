@@ -11,6 +11,11 @@
     {"title": "Blockchain Interactive Session",
      "date": "November 3, 2018",
      "location": {"venue": "BHub, Trivandrum", "lat": "8.54416", "lon": "76.9390033"},
-     "url": "https://www.meetup.com/Built-on-Blockchain-Kochi/events/255507374/"}
+     "url": "https://www.meetup.com/Built-on-Blockchain-Kochi/events/255507374/"},
+
+    {"title": "Meetup Cafe - Calicut",
+     "date": "November 9, 2018",
+     "location": {"venue": "KSUM, Calicut", "lat": "11.2550641", "lon": "75.8264031"},
+     "url": "https://startupmission.kerala.gov.in/event-details/818"}
 
 ]
