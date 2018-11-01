@@ -59,6 +59,7 @@ const page = (events) => ["div.website",
 ["div.sign-up-helper","Get the latest news from Makers of Kerala."],
 ["a.whatsapp-group.signup-button", {href: "https://chat.whatsapp.com/HufqsS5FLgJ9DHRRNSUfrc"}, "Join our Whatsapp Group"],
 ["a.telegram-broadcast.signup-button", {href: "https://t.me/makersofkerala"}, "Join our Telegram Broadcast"]],
+["div.follow-us-block",["div.follow-pull", "Follow Us On"],["a.social-icon",{href: "https://instagram.com/makersofkerala"}, ["img", {src: "instagram.svg"}]],["a.social-icon",{href: "https://twitter.com/makersofkerala"}, ["img", {src: "twitter.svg"}]],["a.social-icon",{href: "https://facebook.com/makersofkerala"}, ["img", {src: "facebook.svg"}]]],
 ["div.copyright", ["div", "© 2018"],["div", "Made by ", ["a.studiobofa-link", {href: "https://studiobofa.com"}, "Studio", ["strong", "BOFA"]]]]]],
 
 // ["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
