@@ -30,7 +30,6 @@ a {
 
 .event-list {
     width: 50%;
-
 }
 
 .website {
@@ -85,7 +84,6 @@ header#main h2 {
     background: white;
     align-items: center;
     
-    
 }
 
 .past-event-block{
@@ -131,7 +129,11 @@ header#main h2 {
     display: block;
     background-blend-mode: multiply;
     background-color: #5373DC;
+    max-width: 100%;
+    flex: 1 1 auto;
+    object-fit: cover;
 }
+
 h1 .light {
 
     font-weight: normal;

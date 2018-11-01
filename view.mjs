@@ -4,7 +4,7 @@ const og = (props) => Object.entries(props).map(([k,v]) => ["meta", {property: `
 
 const twitter = (props) => Object.entries(props).map(([k,v]) => ["meta", {name: `twitter:${k}`, content: `${v}`}]);
 
-const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = ""}) => {
+const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = "", image}) => {
 
     const parsedDate = new Date(Date.parse(date));
     const monthFormat = new Intl.DateTimeFormat("en-US", {month: "short"});
@@ -12,7 +12,7 @@ const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "
     const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
     
     return ["li", ["a.event-board", {href: url},
-        ["img.event-cover", {src:"cover.png"}],
+        ["img.event-cover", {src: image || "cover.png"}],
         ["div.event-block",
          ["div.event-date", ["p.event-day", day], ["p.event-month", month], 
         //  ["p.event-year", year]
