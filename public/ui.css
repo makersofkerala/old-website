@@ -199,22 +199,25 @@ h1 em {
 .website-details{
     width: 30%;
     box-sizing: border-box;
-    padding: 50px;
 }
 
-.logo{
+.logo {
     margin-bottom: 50px;
 }
 
-.map img{
-width: 100%;
+.map img {
+
+    width: 100%;
+
 }
 
 .map {
     width: 30%;
+    display: flex;
     align-self: center;
+    align-items: center;
     box-sizing: border-box;
-
+    margin-left: 1rem;
 }
 
 .event-list {
@@ -254,12 +257,10 @@ width: 100%;
 .sign-up-helper{
     font-size: 13px;
     margin-bottom: 20px;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 .newsletter-signup input{
-
-
 
 background: #FFFFFF;
 box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -273,21 +274,24 @@ width: 100%;
 
 }
 
-.newsletter-signup button{
-
+.signup-button{
     width: 100%;  
-    height: 40px;
-    background: #00bfff;
-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-border-radius: 6px;
-color: white;
-margin-top: 10px;
-;
-border: none;
+    background: #3F7ADC;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    color: white;
+    margin-top: 10px;
+    font-weight: bold;
+    outline: 0;
+    cursor: pointer;
+    display: flex;
+    padding: 1rem;
 }
 
 .copyright {
-    opacity: 0.5;
+    color: #9AC0FA;
+    padding: 1rem 0;
+    font-size: 0.75rem;
 }
 
 @media all and (max-width: 960px) {
@@ -310,6 +314,24 @@ border: none;
         width: 90%;
         margin-bottom: 50px;
     }
+}
+
+.studiobofa {
+
+    color: #30BEFA;
+    
+}
+
+.whatsapp-group {
+
+    background: #79CF81;
+    
+}
+
+.telegram-broadcast {
+    
+    background: #30BEFA;
+    color: white;
 }
 
 @media all and (max-width: 600px) {

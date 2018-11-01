@@ -9,9 +9,9 @@ const plotPoint = ([lat,lon]) => {
 
 }
 
-const parseCoords = (c, {width, height}) => {
+const parseCoords = (c, {left, right, width, height}) => {
 
-      let [sourceLat, sourceLon] = c.map(x => parseFloat(x));
+    let [sourceLat, sourceLon] = c.map(x => parseFloat(x));
 
     const geoJSON = [[74.865170,8.096045],[77.411942,8.096045],[77.411942,12.794469],[74.865170,12.794469],[74.865170,8.096045]];
     
@@ -29,25 +29,35 @@ const parseCoords = (c, {width, height}) => {
 
 };
 
+const plotPoints = (points) => {
+
+    const map = document.querySelector("#map img");
+
+    let elements = document.querySelectorAll(".circle");
+
+    for(let el of elements) el.parentNode.removeChild(el);
+
+    let coords = (point) => parseCoords(point, map.getBoundingClientRect());
+    
+    points.map(p => {
+	
+	let point = coords(p);
+	document.querySelector("#map").appendChild(plotPoint(point));
+	
+    });
+    
+}
+
+
 const init = () => {
 
     const map = document.querySelector("#map img");
 
     const points = JSON.parse(map.dataset.points);
 
-    map.onload = () => {
-	
-	let coords = (point) => parseCoords(point,map.getBoundingClientRect());
-	
-	points.map(p => {
-	    
-	    let point = coords(p);
-	    console.log(point);
-	    document.querySelector("#map").appendChild(plotPoint(point));
-	    
-	});
-	
-    }
+    map.onload = () => { plotPoints(points); }
+
+    window.addEventListener("resize", () => plotPoints(points));
     
 }
 
