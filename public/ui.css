@@ -134,7 +134,7 @@ header#main h2 {
     object-fit: cover;
 }
 .event-text-cover {
-    height: 120px;
+    height: 250px;
     background:#88ceec;
     display: flex;
     justify-content: center; 

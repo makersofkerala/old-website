@@ -10,9 +10,12 @@ const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "
     const monthFormat = new Intl.DateTimeFormat("en-US", {month: "short"});
     const month = monthFormat.format(parsedDate);
     const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
+    var firstCharacters = title.match(/\b(\w)/g); 
+    var acronym = firstCharacters.join('');
     
     return ["li", ["a.event-board", {href: url},
-        ["img.event-cover", {src: image || "cover.png"}],
+    image? ["img.event-cover", {src: image}] : ["div.event-text-cover", acronym],
+       
         ["div.event-block",
          ["div.event-date", ["p.event-day", day], ["p.event-month", month], 
         //  ["p.event-year", year]
