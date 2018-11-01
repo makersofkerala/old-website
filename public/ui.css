@@ -132,6 +132,16 @@ header#main h2 {
     background-blend-mode: multiply;
     background-color: #5373DC;
 }
+.event-text-cover {
+    height: 120px;
+    background:#88ceec;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: white;
+    font-size: 36px;
+
+}
 h1 .light {
 
     font-weight: normal;
