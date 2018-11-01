@@ -44,23 +44,19 @@ const page = (events) => ["div.website",
 // ["h1", ["span.light","Makers"], ["em","of"], "Kerala"]],
 // ],
 // ["h2.website-description", "List of events happening over all over Kerala"],
-// ["button", " + Add a new event"],
-// ["form", ["input", ],
-// ["input", ],
-// ["input", ] ],
-["div.main-sections",
-// ["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
-["div.website-details", 
-["div.logo",["img", {alt: "Makers of Kerala Logo", src: "logo.svg"}],
-["h1", ["span.light","Makers"], ["em","of"], "Kerala"]],
 
-["div", "Signup for our newletter to get the latest updates in the Kerala Startup Scene."],
-["input", ""]
-],
+["div.main-sections",
+["div.website-details",
+["div.logo",["img", {alt: "Makers of Kerala Logo", src: "logo.svg"}],
+["h1", ["span.light","Makers"], ["em","of"], "Kerala"],
+["h2.website-description", "List of maker events happening all over Kerala"]],
+["div", ["div.newsletter-signup", ["div.sign-up-pull", "Sign up for our Newsletter"],["div.sign-up-helper","Get the latest news from Makers of Kerala."],["input", ""], ["button", "Sign up!"]],
+["div.copyright", ["div", "(c) 2018"],["div", "A Studio BOFA Product"]]]],
+
+// ["ul.past-events-collection", ...events.map(eObj => pastEvent(eObj))],
 ["ul.event-list", ...events.map(eObj => event(eObj))],
-["div.map", ["img", {src: "map.svg"}]]
-],
-["footer", "test"]
+["div#map.map", {style: {position: "relative"}}, ["img", {src: "map.svg", data: {points: "[" + events.map(({location: {lat, lon}}) => `[${lat},${lon}]`) + "]"}}]]],
+// ["footer", "test"]
 ];
 
 
@@ -70,6 +66,7 @@ const website = (events) => z.doc([["meta", {name: "title", "content": "Makers o
 ["meta", {name: "viewport", content: "width=device-width, initial-scale=1"}],
 ["title", "Makers of Kerala - Maker Calendar"],
 ["link", {href: "https://fonts.googleapis.com/css?family=Work+Sans:400,600", rel:"stylesheet"}],
-z.css("ui.css")], [page(events)]);
+z.css("ui.css"),
+["script", {src: "ui.js", type: "text/javascript"}]], [page(events)]);
 
 export { website };
