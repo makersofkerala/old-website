@@ -29,7 +29,17 @@ const openGraphTags = og({url: "https://makersofkerala.com/",
 
 const twitterTags = twitter({"card": "summary_large_image", creator: "@studiobofa"});
 
-const page = products => ["div", "hello"];
+const page = products => ["div.product-section",
+
+                         ["div.logo products-section-logo",["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}],
+												 ["h1.products-heading", ["span.light","Makers"], ["em","of"], "Kerala"]],
+												 ["ul",
+												 ["li.product-card",
+											   ["div.product-block",
+												 ["div.product-logo", ["img", {src: "/product-logo.png"}]],
+											 	 ["div.product-details", ["div.product-name", "Market Fox"], ["div.product-description", "Stashy of List is a curated list of useful tools"]],],
+											   ["div.product-makers", ["div.maker-label", "Makers"], ["div.makers-images", ["img", {src: "/avatar1.png"}], ["img", {src: "/avatar2.png"}], ]],
+											   ]]];
 
 const website = (products) => z.doc([metaTitle, metaDesc, metaCharset, metaViewport,
 				     ...openGraphTags, ...twitterTags,
