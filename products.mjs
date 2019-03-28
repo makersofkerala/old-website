@@ -29,7 +29,7 @@ const openGraphTags = og({url: "https://makersofkerala.com/",
 
 const twitterTags = twitter({"card": "summary_large_image", creator: "@studiobofa"});
 
-const page = products => ["div.product-section",
+const page2 = products => ["div.product-section",
 
                          ["div.logo products-section-logo",["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}],
 												 ["h1.products-heading", ["span.light","Makers"], ["em","of"], "Kerala"]],
@@ -39,8 +39,37 @@ const page = products => ["div.product-section",
 												 ["div.product-logo", ["img", {src: "/product-logo.png"}]],
 											 	 ["div.product-details", ["div.product-name", "Market Fox"], ["div.product-description", "Stashy of List is a curated list of useful tools"]],],
 											   ["div.product-makers", ["div.maker-label", "Makers"], ["div.makers-images", ["img", {src: "/avatar1.png"}], ["img", {src: "/avatar2.png"}], ]],
-											   ]]];
+											   ]]
+											];
 
+
+		
+const page3 = products => ["div.product-section",
+                         ["div.logo products-section-logo",["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}],
+												["h1.products-heading", ["span.light","Makers"], ["em","of"], "Kerala"]],
+												["div.product-details-container", 
+												["div.product-image-container", ["img", {src: "/product-logo.png"}]],
+												["div.product-text-content", ["h2", "Product Name"], 
+												["a", {href: "http://link.goes.here"}, "http:link.goes.here"],
+												 ["h3.product-description", "Product description goes here"]], ["div.view-product-button", ["button", "View Product"]]],
+												 ["div", ["ul",
+												["li", ["div", "Email"]],
+												["li", ["div", "Location"]],
+												["li", ["div", ""]],
+												
+										]],
+										["section", ["div.section-header", "Makers"], 
+										["div.makers-container", 
+									["ul", 
+									["li", ["div", ["h4", "Maker 1"], ["span", "Role"]]],
+									["li", ["div", ["h4", "Maker 1"], ["span", "Role"]]],
+									["li", ["div", ["h4", "Maker 1"], ["span", "Role"]]],
+									]
+									]	
+									]
+
+												
+						];
 const website = (products) => z.doc([metaTitle, metaDesc, metaCharset, metaViewport,
 				     ...openGraphTags, ...twitterTags,
 				     ["link", {rel: "shortcut icon", type: "image/png", href: "/favicon-16.png", sizes: "16x16"}],
