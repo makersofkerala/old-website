@@ -260,6 +260,50 @@ header#main h2 {
   opacity: 0.5;
   font-size: 14px;
 }
+
+.section-header {
+  text-transform: uppercase;
+  color: #3F7ADC;
+  margin-bottom: 1em;
+  font-weight: 500;
+  font-size: 14px;
+
+}
+
+.footer-section-header {
+
+  color: #8096AD;
+}
+
+.sections-container {
+
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+
+}
+
+.makers-container {
+
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.social-media-icons {
+  display: flex;
+}
+
+footer {
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2em 0;
+  border-top: 1px solid rgba(63, 122, 220, 0.3);
+}
+
 h1 .light {
 
     font-weight: normal;
@@ -385,6 +429,18 @@ h1 em {
     margin-bottom: 50px;
 }
 
+.contact-list {
+
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.contact-list img {
+
+  margin-right: 4px;
+}
+
 .sign-up-pull{
     text-transform: uppercase;
     font-weight: 600;
@@ -392,9 +448,12 @@ h1 em {
 }
 
 .sign-up-helper{
-    font-size: 13px;
-    margin-bottom: 20px;
+    font-size: 12px;
     opacity: 0.5;
+}
+
+.sign-up-section {
+
 }
 
 .newsletter-signup input{
@@ -412,22 +471,30 @@ width: 100%;
 }
 
 .signup-button{
-    width: 100%;
+    /* width: 100%; */
     background: #3F7ADC;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
     color: white;
+    font-size: 14px;
     margin-top: 10px;
-    font-weight: bold;
     outline: 0;
     cursor: pointer;
     display: flex;
-    padding: 1rem;
+    padding: 0.6rem 1rem;
     box-sizing: border-box;
+    white-space: nowrap;
+    font-weight: 500;
+    margin-right: 30px;
 
 }
+.signup-button-container {
 
-.copyright {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright-section {
     color: #9AC0FA;
     padding: 1rem 0;
     font-size: 0.75rem;
@@ -445,6 +512,13 @@ width: 100%;
 
 .social-icon:hover {
     background: #E3EBF3;
+}
+
+.follow-us-section {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .follow-pull {
@@ -486,6 +560,7 @@ width: 100%;
 .studiobofa-link {
 
     color: #30BEFA;
+    margin-left: 4px;
 
 }
 
@@ -525,7 +600,7 @@ width: 100%;
         margin-bottom: 25px;
     }
 
-    .copyright {
+    .copyright-section {
         display: none;
     }
 
@@ -559,7 +634,6 @@ width: 100%;
         display: none;
     }
     .signup-button {
-        padding: 0.5rem;
         justify-content: center;
     }
     .sign-up-pull{
@@ -580,34 +654,68 @@ width: 100%;
 .product-details-container h2 {
 color: #0C075A;
 font-size: 30px;
+padding-bottom: 2px;
 }
 
 
 .product-details-container .product-description {
     font-size: 14px;
-    font-weight: 500;
+    padding: 6px 0;
+    font-weight: normal;
 }
 
 .view-product-button button{
     background: #3F7ADC;
     border: none;
-    padding: 5px;
+    border-radius: 10px;
+    padding: 10px;
     font-size: 17px;
     text-transform: uppercase;
     color: white;
     font-family: "Work Sans";
+    font-weight: 500;
 }
 
 .product-details-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 
 }
+.product-head {
+
+  width: 100%;
+  box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.45);
+  margin-bottom: 20px;
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-sizing: border-box;
+
+}
+
+.product-contacts {
+
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.6;
+  margin-top: 1.4em;
+}
+
+.product-name-details {
+
+  display: flex;
+  align-items: center;
+}
 
 .product-text-content {
-    width: 50%;
+    /* width: 50%; */
+}
+
+.product-text-content a {
+
+  color: #5388E0;
 }
 .product-image-container {
 
@@ -622,4 +730,56 @@ font-size: 30px;
     object-fit: cover;
     width: 100px;
     height: 100px;
+}
+
+.maker-card {
+
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.45);
+  margin-bottom: 20px;
+  transition: 0.15s box-shadow ease;
+  background: white;
+  min-width: 220px;
+  max-width: 300px;
+  width: 31.1111111111%;
+
+}
+
+.maker-block {
+
+  display: flex;
+  padding: 1rem 1.25rem;
+}
+
+.maker-details {
+  padding-left: 1.25rem;
+
+
+}
+
+.maker-avatar {
+  min-width: 40px;
+  max-width: 50px;
+  min-height: 40px;
+  max-height: 50px;
+
+}
+
+.maker-avatar img {
+
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.maker-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.maker-role {
+  opacity: 0.5;
+  font-size: 14px;
 }
