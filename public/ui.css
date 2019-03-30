@@ -31,10 +31,6 @@ a {
     text-transform: uppercase;
 }
 
-.event-list {
-    width: 50%;
-}
-
 .website {
     display: flex;
     flex-direction: column;
@@ -439,26 +435,15 @@ h1 em {
   align-items: center;
 }
 
-.map img {
-
-    width: 100%;
-
-}
-
-.map {
-    width: 30%;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    box-sizing: border-box;
-    margin-left: 1rem;
-}
-
 .event-list {
-    width: 40%;
-    max-width: 400px;
-    min-width: 300px;
     padding-top: 50px;
+    display: flex;
+    max-width: 960px;
+    flex-wrap: wrap;
+}
+
+.event-list li {
+    max-width: 400px;
 }
 
 .circle {
@@ -871,10 +856,6 @@ flex-direction: row;   }
     }
     .follow-us-block {
 
-        width: 100%;
-    }
-
-    .event-list {
         width: 100%;
     }
 
