@@ -1,5 +1,5 @@
 import fs from "fs";
-import { website } from "./view.mjs";
+import { page as eventPage } from "./events.mjs";
 import { website as productPage } from "./products.mjs";
 import * as z from "./z.mjs";
 import eventsDB from './db/2018-events.json';
@@ -15,7 +15,7 @@ fs.writeFileSync(publicFolder + "products.html", productPage(productsDB));
 
 const buildWebsite = () => {
 
-fs.writeFileSync(publicFolder + "index.html", website(eventsDB));
+fs.writeFileSync(publicFolder + "index.html", eventPage(eventsDB));
 
 }
 
