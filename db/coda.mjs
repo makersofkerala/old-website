@@ -16,8 +16,7 @@ const getTable = async (docId, tableId) => {
     
 };
 
-
-const products = async () => {
+const getProducts = async () => {
 
     const products = await getTable("jFO1OMp-Lg", "grid-qpxPv9odSr");
 
@@ -31,18 +30,18 @@ const products = async () => {
     
 };
 
-const events = async () => {
+const getEvents = async () => {
 
-    const events = await getTable("jFO1OMp-Lg", "grid-qpxPv9odSr");
+    const events = await getTable("jFO1OMp-Lg", "grid-6unYzcrKtZ");
 
     const selectors = ["Title", "Venue", "From Date"];
 
-    let selections = products.map(product => product.filter(selection => selectors.find(sel => sel == selection.column)));
+    let selections = events.map(event => event.filter(selection => selectors.find(sel => sel == selection.column)));
 
-    let result = selections.map(product => product.reduce((i, {column, value}) => Object.assign(i, {[column.toLowerCase()]: value}), {}));
+    let result = selections.map(event => event.reduce((i, {column, value}) => Object.assign(i, {[column.toLowerCase().replace(/ /g, "_")]: value}), {}));
 
     return result;
     
 }
 
-export { products, events };
+export { getProducts, getEvents };

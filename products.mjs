@@ -3,8 +3,7 @@ import * as z from './z.mjs';
 import  { buildPage, header } from "./common.mjs";
 
 const productListing = products => ["div.product-section",
-			   ["div.logo products-section-logo",["a", {href: "https://makersofkerala.com/"},["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}]],
-			    ["h1.products-heading", ["span.light","Makers"], ["em","of"], "Kerala"]],
+			   header,
 			   ["ul.products-list",
 			    ["li.product-card",
 			     ["a", {href: "https://t.me/makersofkerala"},

@@ -1,7 +1,7 @@
 import * as z from './z.mjs';
 import  { header, buildPage } from "./common.mjs";
 
-const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = "", image}) => {
+const event = ({title = "Untitled Event", from_date: date = new Date(), link = "", cover = "", venue}) => {
 
     const parsedDate = new Date(Date.parse(date));
     const monthFormat = new Intl.DateTimeFormat("en-US", {month: "short"});
@@ -10,33 +10,13 @@ const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "
     var firstCharacters = title.match(/\b(\w)/g); 
     var acronym = firstCharacters.join('');
     
-    return ["li", ["a.event-board", {href: url},
-    image? ["img.event-cover", {src: image}] : ["div.event-text-cover", acronym],
+    return ["li", ["a.event-board", {href: link},
+    cover ? ["img.event-cover", {src: cover}] : ["div.event-text-cover", acronym],
        
         ["div.event-block",
          ["div.event-date", ["p.event-day", day], ["p.event-month", month], 
         //  ["p.event-year", year]
         ],
-	    ["div.event-details",  ["div.event-name", title],
-	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "location.svg"}], venue]],
-	    ["div", "→ "]]]];
-
-};
-
-const pastEvent = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = ""}) => {
-
-    const parsedDate = new Date(Date.parse(date));
-    const monthFormat = new Intl.DateTimeFormat("en-US", {month: "short"});
-    const month = monthFormat.format(parsedDate);
-    const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
-    
-    return ["li", ["a.past-event-board", {href: url},
-    
-        // ["img.event-cover", {src:"cover.png"}],
-        ["div.past-event-block",
-        ["div.past-event-date", ["p.event-day", day], ["p.event-month", month], 
-        // ["p.event-year", year]
-    ],
 	    ["div.event-details",  ["div.event-name", title],
 	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "location.svg"}], venue]],
 	    ["div", "→ "]]]];
