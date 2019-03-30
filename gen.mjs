@@ -20,7 +20,7 @@ const buildWebsite = async () => {
 
 const events = await getEvents();
 
-fs.writeFileSync(publicFolder + "index.html", eventPage(events));
+fs.writeFileSync(publicFolder + "events.html", eventPage(events));
 
 }
 
