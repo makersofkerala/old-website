@@ -348,9 +348,9 @@ footer {
   width: 100%;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex-direction: column;
   padding: 2em 0;
   border-top: 1px solid rgba(63, 122, 220, 0.3);
+  flex-direction: row;
 }
 
 h1 .light {
@@ -556,7 +556,8 @@ width: 100%;
     font-size: 0.75rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+
 }
 
 .social-icon {
@@ -631,7 +632,7 @@ padding-bottom: 2px;
 
 .view-product-button {
 
-  margin-top: 1.4em;
+  margin-top: 2em;
 
 }
 
@@ -657,9 +658,9 @@ padding-bottom: 2px;
 
 .product-contacts {
 
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.4em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1em;
 }
 
 .product-name-details {
@@ -755,47 +756,10 @@ padding-bottom: 2px;
 }
 
 
-
-@media all and (max-width: 960px) {
-
-    .map {
-
-     display: none;
-
-    }
-
-    .website-details{
-        width: 40%;
-        padding: 50px 10px;
-    }
-
-    .event-list{
-        width: 60%;
-    }
-    .newsletter-signup {
-        width: 90%;
-        margin-bottom: 50px;
-    }
+.sign-up-helper {
+    display: none;
 }
 
-.studiobofa-link {
-
-    color: #30BEFA;
-    margin-left: 4px;
-
-}
-
-.whatsapp-group {
-
-    background: #79CF81;
-
-}
-
-.telegram-broadcast {
-
-    background: #30BEFA;
-    color: white;
-}
 
 
 
@@ -851,9 +815,7 @@ flex-direction: row;   }
         margin-bottom: 25px;
     }
 
-    .copyright-section {
-        display: none;
-    }
+
 
     .event-list {
         padding-top: 0px;
@@ -882,9 +844,7 @@ flex-direction: row;   }
         margin-bottom: 0;
     }
 
-    .sign-up-helper {
-        display: none;
-    }
+
     .signup-button {
         justify-content: center;
     }
@@ -901,6 +861,11 @@ flex-direction: row;   }
         width: 100%;
     }
 
+    .follow-us-section {
+
+      width: 20%;
+    }
+
 }
 
 @media all and (min-width: 800px) {
@@ -912,6 +877,49 @@ flex-direction: row;   }
 
 
 }
+
+
+@media all and (max-width: 960px) {
+
+    .map {
+
+     display: none;
+
+    }
+
+    .website-details{
+        width: 40%;
+        padding: 50px 10px;
+    }
+
+    .event-list{
+        width: 60%;
+    }
+    .newsletter-signup {
+        width: 90%;
+        margin-bottom: 50px;
+    }
+}
+
+.studiobofa-link {
+
+    color: #30BEFA;
+    margin-left: 4px;
+
+}
+
+.whatsapp-group {
+
+    background: #79CF81;
+
+}
+
+.telegram-broadcast {
+
+    background: #30BEFA;
+    color: white;
+}
+
 
 
 @media all and (min-width: 960px) {
