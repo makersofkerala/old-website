@@ -32,7 +32,7 @@ const footer = ["footer",
 			    ["div.social-media-icons footer-section",["a.social-icon", {href:"https://instagram.com/makersofkerala"}, ["img", {src: "/instagram.svg"}]],
 			     ["a.social-icon", {href:"https://twitter.com/makersofkerala"}, ["img", {src: "/twitter.svg"}]],
 			     ["a.social-icon", {href:"https://facebook.com/makersofkerala"}, ["img", {src: "/facebook.svg"}]],],],
-			   ["section.copyright-section", ["div","© 2018"],["div","Made by", ["a.studiobofa-link", {href: "https://studiobofa.com"},"Studiobofa"]]]]
+			   ["section.copyright-section", ["div","© 2018-2019"],["div","Made by", ["a.studiobofa-link", {href: "https://studiobofa.com"},"Studiobofa"]]]]
 
 const buildPage = (page) => z.doc([metaTitle,
 metaDescription,
