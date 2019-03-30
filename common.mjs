@@ -27,12 +27,26 @@ gtag('config', 'UA-128502139-1');`],
 for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\\/\\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]); mixpanel.init("ac700408df9bb39046077dc25adad61a");`]]
 
 const footer = ["footer",
-			   ["section.sign-up-section footer-section",["div.section-header footer-section-header", "sign up"], ["p.sign-up-helper", "Get the latest news from Makers of Kerala."],["div.signup-button-container",["a.whatsapp-group signup-button", {href:"https://chat.whatsapp.com/HufqsS5FLgJ9DHRRNSUfrc"},"Join our Whatsapp Group"],["a.telegram-broadcast signup-button", {href:"https://t.me/makersofkerala"},"Join our Telegram Broadcast"],],],
+			   ["section.sign-up-section footer-section",["div.section-header footer-section-header", "Get the latest updates"], ["p.sign-up-helper", "Get the latest news from Makers of Kerala."],["div.signup-button-container",["a.whatsapp-group signup-button", {href:"https://chat.whatsapp.com/HufqsS5FLgJ9DHRRNSUfrc"},"Join our Whatsapp Group"],["a.telegram-broadcast signup-button", {href:"https://t.me/makersofkerala"},"Join our Telegram Broadcast"],],],
 			   ["section.follow-us-section footer-section",["div.section-header footer-section-header", "Follow us on"],
 			    ["div.social-media-icons footer-section",["a.social-icon", {href:"https://instagram.com/makersofkerala"}, ["img", {src: "/instagram.svg"}]],
 			     ["a.social-icon", {href:"https://twitter.com/makersofkerala"}, ["img", {src: "/twitter.svg"}]],
 			     ["a.social-icon", {href:"https://facebook.com/makersofkerala"}, ["img", {src: "/facebook.svg"}]],],],
 			   ["section.copyright-section", ["div","© 2018-2019"],["div","Made by", ["a.studiobofa-link", {href: "https://studiobofa.com"},"Studiobofa"]]]]
+
+const header = ["header.nav-section",
+		["div.logo nav-section-logo",
+		 ["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}],
+		 ["h1.products-heading",
+		  ["span.light","Makers"], ["em","of"], "Kerala"]],
+		["nav",
+		 ["ul.nav-list",
+		  ["li",["a", {href: "/products/"}, "Products"]],
+		  // ["li",["a",  {href: "/makers/"}, "Makers"]],
+		  // ["li",["a", {href: "/hackathons/"}, "Hackathons"]],
+		  ["li",["a", {href: "/events/"}, "Events"]],
+		//  ["li",["a",  {href: "/resources/"}, "Resources"]]
+		 ]]];
 
 const buildPage = (page) => z.doc([metaTitle,
 metaDescription,
@@ -52,4 +66,4 @@ z.css("ui.css"),
 ["script", {src: "ui.js", type: "text/javascript"}]], [page, footer]);
 
 
-export { buildPage, footer };
+export { buildPage, footer, header };

@@ -1,6 +1,6 @@
 import * as z from './z.mjs';
 
-import  { buildPage } from "./common.mjs";
+import  { buildPage, header } from "./common.mjs";
 
 const page3 = products => ["div.product-section",
 			   ["div.logo products-section-logo",["a", {href: "https://makersofkerala.com/"},["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}]],
@@ -35,9 +35,7 @@ const page3 = products => ["div.product-section",
 
 
 const page = products => ["div.product-section",
-			  ["header.nav-section",["div.logo nav-section-logo",["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}],
-						 ["h1.products-heading", ["span.light","Makers"], ["em","of"], "Kerala"]],["nav",
-															   ["ul.nav-list",["li",["a", {href: "https://producthunt.com"}, "Products"]], ["li",["a",  {href: "https://producthunt.com"}, "Makers"]], ["li",["a", {href: "https://producthunt.com"}, "Hackathons"]], ["li",["a", {href: "https://producthunt.com"}, "Events"]], ["li",["a",  {href: "https://producthunt.com"}, "Resources"]],]]],
+			  header,
 			  ["div.product-head",["div.product-details-container",
 					       ["div.product-name-details",["div.product-image-container", ["img", {src: "/product-logo.jpg"}]],
 						["div.product-text-content", ["h2", "Product Name"],

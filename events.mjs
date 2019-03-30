@@ -1,5 +1,5 @@
 import * as z from './z.mjs';
-import  { buildPage } from "./common.mjs";
+import  { header, buildPage } from "./common.mjs";
 
 const event = ({title = "Untitled Event", location: {lat, long, venue}, date = "", url = "", image}) => {
 
@@ -56,6 +56,7 @@ const details = ["div.website-details",
 		  ["div.copyright", ["div", "© 2018"],["div", "Made by ", ["a.studiobofa-link", {href: "https://studiobofa.com"}, "Studio", ["strong", "BOFA"]]]]]];
 
 const page = (events) => buildPage(["div.website", 
+				    header,
 				    ["div.main-sections",
 				     ["ul.event-list", ...events.map(eObj => event(eObj))]]]);
 
