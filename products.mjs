@@ -74,14 +74,7 @@ const page = products => ["div.product-section",
 
 			   // ["section", ["div.section-header", "Product Shots"],
 			   // ["div.", ["img", {src: "/product-shot1.png"}], ["img", {src: "/product-shot2.png"}]]]
-			  ],
-			  ["footer",
-			   ["section.sign-up-section footer-section",["div.section-header footer-section-header", "sign up"], ["p.sign-up-helper", "Get the latest news from Makers of Kerala."],["div.signup-button-container",["a.whatsapp-group signup-button", {href:"https://chat.whatsapp.com/HufqsS5FLgJ9DHRRNSUfrc"},"Join our Whatsapp Group"],["a.telegram-broadcast signup-button", {href:"https://t.me/makersofkerala"},"Join our Telegram Broadcast"],],],
-			   ["section.follow-us-section footer-section",["div.section-header footer-section-header", "Follow us on"],
-			    ["div.social-media-icons footer-section",["a.social-icon", {href:"https://instagram.com/makersofkerala"}, ["img", {src: "/instagram.svg"}]],
-			     ["a.social-icon", {href:"https://twitter.com/makersofkerala"}, ["img", {src: "/twitter.svg"}]],
-			     ["a.social-icon", {href:"https://facebook.com/makersofkerala"}, ["img", {src: "/facebook.svg"}]],],],
-			   ["section.copyright-section", ["div","© 2018"],["div","Made by", ["a.studiobofa-link", {href: "https://studiobofa.com"},"Studiobofa"]]]]];
+			  ]];
 
 const website = (products) => buildPage(page(products));
 
