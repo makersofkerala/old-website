@@ -62,7 +62,7 @@ image: "https://makersofkerala.com/meta-card.png"}),
 ...googleTags,
 ["title", "Makers of Kerala - Maker Calendar"],
 ["link", {href: "https://fonts.googleapis.com/css?family=Work+Sans:400,600", rel:"stylesheet"}],
-z.css("ui.css"),
+z.css("/ui.css"),
 ["script", {src: "ui.js", type: "text/javascript"}]], [page, footer]);
 
 
