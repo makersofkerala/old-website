@@ -2,7 +2,7 @@ import * as z from './z.mjs';
 
 import  { buildPage, header } from "./common.mjs";
 
-const page3 = products => ["div.product-section",
+const productListing = products => ["div.product-section",
 			   ["div.logo products-section-logo",["a", {href: "https://makersofkerala.com/"},["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}]],
 			    ["h1.products-heading", ["span.light","Makers"], ["em","of"], "Kerala"]],
 			   ["ul.products-list",
@@ -34,7 +34,7 @@ const page3 = products => ["div.product-section",
 
 
 
-const page = products => ["div.product-section",
+const product = products => ["div.product-section",
 			  header,
 			  ["div.product-head",["div.product-details-container",
 					       ["div.product-name-details",["div.product-image-container", ["img", {src: "/product-logo.jpg"}]],
@@ -74,6 +74,8 @@ const page = products => ["div.product-section",
 			   // ["div.", ["img", {src: "/product-shot1.png"}], ["img", {src: "/product-shot2.png"}]]]
 			  ]];
 
-const website = (products) => buildPage(page(products));
+const productPage = (products) => buildPage(product(products));
 
-export { website };
+const productListingPage = (products) => buildPage(productListing(products));
+
+export { productPage, productListingPage };
