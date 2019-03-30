@@ -5,33 +5,12 @@ import  { buildPage, header } from "./common.mjs";
 const productListing = products => ["div.product-section",
 			   header,
 			   ["ul.products-list",
+			   ...products.map(({title, description, link, logo}) =>
 			    ["li.product-card",
-			     ["a", {href: "https://t.me/makersofkerala"},
+			     ["a", {href: link},
 			      ["div.product-block",
-			       ["div.product-logo", ["img", {src: "/product-logo.jpg"}]],
-			       ["div.product-details", ["div.product-name", "Market Fox"], ["div.product-description", "Stashy of List is a curated list of useful tools"]],],
-			      // ["div.product-makers", ["div.maker-label", "Makers"], ["div.makers-images", ["img", {src: "/avatar1.png"}], ["img", {src: "/avatar2.png"}], ]],
-			     ]],["li.product-card",
-				 ["a", {href: "https://t.me/makersofkerala"},
-				  ["div.product-block",
-				   ["div.product-logo", ["img", {src: "/product-logo.jpg"}]],
-				   ["div.product-details", ["div.product-name", "Market Fox"], ["div.product-description", "Stashy of List is a curated list of useful tools"]],],
-				  // ["div.product-makers", ["div.maker-label", "Makers"], ["div.makers-images", ["img", {src: "/avatar1.png"}], ["img", {src: "/avatar2.png"}], ]],
-				 ]],["li.product-card",
-				     ["a", {href: "https://t.me/makersofkerala"},
-				      ["div.product-block",
-				       ["div.product-logo", ["img", {src: "/product-logo.jpg"}]],
-				       ["div.product-details", ["div.product-name", "Market Fox"], ["div.product-description", "Stashy of List is a curated list of useful tools"]],],
-				      // ["div.product-makers", ["div.maker-label", "Makers"], ["div.makers-images", ["img", {src: "/avatar1.png"}], ["img", {src: "/avatar2.png"}], ]],
-				     ]],["li.product-card",
-					 ["a", {href: "https://t.me/makersofkerala"},
-					  ["div.product-block",
-					   ["div.product-logo", ["img", {src: "/product-logo.jpg"}]],
-					   ["div.product-details", ["div.product-name", "Market Fox"], ["div.product-description", "Stashy of List is a curated list of useful tools"]],],
-					  // ["div.product-makers", ["div.maker-label", "Makers"], ["div.makers-images", ["img", {src: "/avatar1.png"}], ["img", {src: "/avatar2.png"}], ]],
-					 ]]]];
-
-
+			       ["div.product-logo", ["img", {src: logo, alt: "Logo of " + title}]],
+			       ["div.product-details", ["div.product-name", title], ["div.product-description", description]]]]])]];
 
 const product = products => ["div.product-section",
 			  header,

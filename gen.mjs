@@ -14,6 +14,8 @@ fs.writeFileSync(publicFolder + "product.html", productPage(products));
 
 fs.writeFileSync(publicFolder + "products.html", productListingPage(products));
 
+console.log("Generated products page");
+
 }
 
 const buildWebsite = async () => {
@@ -21,6 +23,8 @@ const buildWebsite = async () => {
 const events = await getEvents();
 
 fs.writeFileSync(publicFolder + "events.html", eventPage(events));
+
+console.log("Generated events page");
 
 }
 
