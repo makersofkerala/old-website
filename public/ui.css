@@ -8,6 +8,7 @@ body {
     background: #F6F9FC;
     max-width: 960px;
     margin: 0 auto;
+    padding: 1em;
 }
 
 ul {
@@ -248,8 +249,7 @@ header#main h2 {
   height: 100%;
   align-items: center;
   flex-direction: column;
-  padding: 1em;
-  box-sizing: border-box;
+
 }
 
 .nav-section {
@@ -324,9 +324,17 @@ header#main h2 {
 .sections-container {
 
   width: 100%;
-  padding: 30px;
   box-sizing: border-box;
 
+}
+
+.sign-up-section {
+  width: 100%;
+}
+
+.makers-container li:nth-child(3) {
+
+  margin-right: 0;
 }
 
 .makers-container {
@@ -782,6 +790,10 @@ padding-bottom: 2px;
 }
 
 
+.sign-up-section {
+
+  width: 50%;
+}
 
 
 
