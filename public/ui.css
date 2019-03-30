@@ -8,6 +8,7 @@ body {
     background: #F6F9FC;
     max-width: 960px;
     margin: 0 auto;
+    padding: 1em;
 }
 
 ul {
@@ -248,8 +249,7 @@ header#main h2 {
   height: 100%;
   align-items: center;
   flex-direction: column;
-  padding: 1em;
-  box-sizing: border-box;
+
 }
 
 .nav-section {
@@ -324,9 +324,17 @@ header#main h2 {
 .sections-container {
 
   width: 100%;
-  padding: 30px;
   box-sizing: border-box;
 
+}
+
+.sign-up-section {
+  width: 100%;
+}
+
+.makers-container li:nth-child(3) {
+
+  margin-right: 0;
 }
 
 .makers-container {
@@ -549,6 +557,7 @@ width: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  min-width: 240px;
 }
 
 .copyright-section {
@@ -578,7 +587,7 @@ width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
 
 }
 
@@ -782,6 +791,10 @@ padding-bottom: 2px;
 }
 
 
+.sign-up-section {
+
+  width: 50%;
+}
 
 
 
@@ -834,6 +847,10 @@ flex-direction: row;   }
         align-items: center;
     }
 
+    .sign-up-helper {
+      display: block;
+    }
+
 
 
     .nav-section {
@@ -873,6 +890,21 @@ flex-direction: row;   }
   .logo h1 {
       display: block;
   }
+
+  .sign-up-section {
+
+    width: 60%;
+  }
+
+.signup-button-container {
+  flex-direction: row;
+  justify-content: flex-start;
+
+}
+
+.telegram-broadcast {
+  margin-left: 20px;
+}
 
 
 
