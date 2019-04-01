@@ -81,7 +81,7 @@ header#main h2 {
 
 
 .event-details{
-    width: 200px;
+    /* width: 200px; */
 }
 
 .event-block {
@@ -89,6 +89,7 @@ header#main h2 {
     padding: 1rem 1.25rem;
     background: white;
     align-items: center;
+    height: 96px;
 
 }
 
@@ -101,13 +102,13 @@ header#main h2 {
     transition: 0.15s box-shadow ease;
 }
 .event-board{
-    margin: 20px;
+    /* margin: 20px; */
     position: relative;
     display: block;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 12px rgba(196, 207, 218, 0.45);
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     transition: 0.15s box-shadow ease;
 }
 
@@ -256,6 +257,11 @@ header#main h2 {
 
 }
 
+.event-section {
+
+  margin-bottom: 2em;
+}
+
 .nav-section {
 
   display: flex;
@@ -310,8 +316,9 @@ header#main h2 {
 
   opacity: 0.5;
   font-size: 14px;
-  height: 34px;
+  height: 33px;
   overflow: hidden;
+
 }
 
 .section-header {
@@ -447,15 +454,23 @@ h1 em {
 }
 
 .event-list {
-    padding-top: 50px;
+    /* padding-top: 50px;
     display: flex;
     max-width: 960px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 20px;
+
+    /* grid-auto-rows: minmax(112px, auto); */
 }
 
 .event-list li {
-    max-width: 400px;
+    /* max-width: 400px; */
 }
+
+
 
 .circle {
 
@@ -820,6 +835,12 @@ padding-bottom: 2px;
       margin-top:0;
     }
 
+    .event-list {
+
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 20px;
+    }
+
     .product-card {
 
     /* width: 40.6666666667%;
@@ -840,7 +861,7 @@ flex-direction: row;   }
 
 
     .event-list {
-        padding-top: 0px;
+        /* padding-top: 0px; */
     }
 
     .website-details {
@@ -913,6 +934,12 @@ flex-direction: row;   }
 
 }
 
+.event-list {
+
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
 .telegram-broadcast {
   margin-left: 20px;
 }
@@ -936,7 +963,7 @@ flex-direction: row;   }
     }
 
     .event-list{
-        width: 60%;
+        /* width: 60%; */
     }
     .newsletter-signup {
         width: 90%;
