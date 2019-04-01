@@ -4,7 +4,6 @@ import { buildWebsite, buildProductPage } from './gen.mjs';
 const PORT = process.argv.slice(2)[0] || 8000;
 
 let server = xila.serve(
-    xila.get("/", xila.redirect("/products/")),
     xila.get("/products/", xila.file("./public/products.html")),
     xila.get("/events/", xila.file("./public/events.html")),
     xila.get("/*", xila.staticAssets("./public/"))
