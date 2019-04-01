@@ -2,6 +2,8 @@ import Coda from 'coda-js';
 
 const TOKEN = process.env.CODA_TOKEN;
 
+const coda = new Coda.default(TOKEN);
+
 const getTable = async (docId, tableId) => {
 
     const table = await (await coda.getDoc(docId)).getTable(tableId);
