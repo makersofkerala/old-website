@@ -10,7 +10,7 @@ const buildProductPage = async ()  => {
 
 const products = await getProducts();
 
-fs.writeFileSync(publicFolder + "index.html", productPage(products));
+fs.writeFileSync(publicFolder + "index.html", productListingPage(products));
 
 fs.writeFileSync(publicFolder + "product.html", productPage(products));
 
