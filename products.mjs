@@ -16,7 +16,7 @@ const makerCard = (maker) =>
       ["li.maker-card",
        ["a", {href: "#makers/" + maker},
 	["div.maker-block",
-	 ["div.maker-avatar", ["img", {src: "#avatar"}]],
+	 ["div.maker-avatar", ["img", {src: "avatar.svg"}]],
 	 ["div.maker-details",
 	  ["div.maker-name", maker],
 	  ["div.maker-role", "Maker"]]]]];
