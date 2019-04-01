@@ -60,7 +60,7 @@ image: "https://makersofkerala.com/meta-card.png"}),
 ...twitter({"card": "summary_large_image", creator: "@studiobofa"}),
 ...faviconLinks,
 ...googleTags,
-["title", "Makers of Kerala - Maker Calendar"],
+["title", "Makers of Kerala"],
 ["link", {href: "https://fonts.googleapis.com/css?family=Work+Sans:400,600", rel:"stylesheet"}],
 z.css("/ui.css"),
 ["script", {src: "ui.js", type: "text/javascript"}]], [page, footer]);
