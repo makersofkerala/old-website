@@ -18,7 +18,7 @@ const event = ({title = "Untitled Event", from_date: date = new Date(), link = "
         //  ["p.event-year", year]
         ],
 	    ["div.event-details",  ["div.event-name", title],
-	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "/img/location.svg"}], venue]],
+	     ["div.event-location", ["img.location-icon", {alt: "location pin", src: "/location.svg"}], venue]],
 	    ["div", "→ "]]]];
 
 };

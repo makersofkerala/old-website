@@ -12,7 +12,11 @@ const products = await getProducts();
 
 fs.writeFileSync(publicFolder + "index.html", productListingPage(products));
 
-fs.writeFileSync(publicFolder + "product.html", productPage(products));
+products.map(p => {
+
+fs.writeFileSync(publicFolder + "product/" + p.id + ".html", productPage(p));
+
+});
 
 fs.writeFileSync(publicFolder + "products.html", productListingPage(products));
 

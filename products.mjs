@@ -5,52 +5,42 @@ import  { buildPage, header } from "./common.mjs";
 const productListing = products => ["div.product-section",
 			   header,
 			   ["ul.products-list",
-			   ...products.map(({title, description, link, logo}) =>
+			    ...products.map(({id, title, description, link, logo}) =>
 			    ["li.product-card",
-			     ["a", {href: link},
+			     ["a", {href: "/product/" + id + ".html"},
 			      ["div.product-block",
 			       ["div.product-logo", ["img", {src: logo, alt: "Logo of " + title}]],
 			       ["div.product-details", ["div.product-name", title], ["div.product-description", description]]]]])]];
 
-const product = products => ["div.product-section",
-			  header,
-			  ["div.product-head",["div.product-details-container",
-					       ["div.product-name-details",["div.product-image-container", ["img", {src: "/product-logo.jpg"}]],
-						["div.product-text-content", ["h2", "Product Name"],
-						 ["a", {href: "http://link.goes.here"}, "http:link.goes.here"],
-						 ["h3.product-description", "Product description goes here"]]], ["div.view-product-button", ["a", {href: "https://makersofkerala.com"}, "View Product ↗︎"]]],
-			   ["ul.product-contacts",
-			    ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/location.svg"}],"Location"]],
-			    ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/mail.svg"}],"Email"]],
-			    ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/twitter1.svg"}],"Twitter"]],
-			    ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/product-hunt.svg"}],"Producthunt"]],
+const makerCard = (maker) => 
+      ["li.maker-card",
+       ["a", {href: "#makers/" + maker},
+	["div.maker-block",
+	 ["div.maker-avatar", ["img", {src: "/avatar.svg", alt: "Avatar of " + maker}]],
+	 ["div.maker-details",
+	  ["div.maker-name", maker],
+	  ["div.maker-role", "Maker"]]]]];
 
-			   ],],
-			  ["section.sections-container", ["div.section-header", "Makers"],
-
-
-			   ["ul.makers-container",
-			    ["li.maker-card",
-			     ["a", {href: "https://t.me/makersofkerala"},
-			      ["div.maker-block",
-			       ["div.maker-avatar", ["img", {src: "/avatar1.png"}]],
-			       ["div.maker-details", ["div.maker-name", "Aslam Abbas"], ["div.maker-role", "Founder"]],],]],
-			    ["li.maker-card",
-			     ["a", {href: "https://t.me/makersofkerala"},
-			      ["div.maker-block",
-			       ["div.maker-avatar", ["img", {src: "/avatar2.png"}]],
-			       ["div.maker-details", ["div.maker-name", "Shyjal Raazi"], ["div.maker-role", "Founder"]],],]],
-			    ["li.maker-card",
-			     ["a", {href: "https://t.me/makersofkerala"},
-			      ["div.maker-block",
-			       ["div.maker-avatar", ["img", {src: "/avatar1.png"}]],
-			       ["div.maker-details", ["div.maker-name", "Aslam Abbas"], ["div.maker-role", "Founder"]],],]],
-			   ],
-
-
-			   // ["section", ["div.section-header", "Product Shots"],
-			   // ["div.", ["img", {src: "/product-shot1.png"}], ["img", {src: "/product-shot2.png"}]]]
-			  ]];
+const product = ({title = "", description = "", logo = "", makers = [], launch_date = "",  website = "", ph_link = "", location = "", mail = "", twitter_link = ""}) =>
+      ["div.product-section",
+       header,
+       ["div.product-head",
+	["div.product-details-container",
+	 ["div.product-name-details",
+	  ["div.product-image-container", ["img", {src: logo, alt: "Logo for " + title}]],
+	  ["div.product-text-content",
+	   ["h2", title],
+	   ["a", {href: website}, website],
+	   ["h3.product-description", description]]],
+	 ["div.view-product-button", ["a", {href: website}, "View Product ↗︎"]]],
+	["ul.product-contacts",
+	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/location.svg"}], location]],
+	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/mail.svg"}], mail]],
+	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/twitter1.svg"}], twitter_link]],
+	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/product-hunt.svg"}], ph_link]]]],
+       ["section.sections-container",
+	["div.section-header", "Makers"],
+	["ul.makers-container", ...makers.map(maker => makerCard(maker))]]];
 
 const productPage = (products) => buildPage(product(products));
 
