@@ -12,7 +12,7 @@ const productListing = products => ["div.product-section",
 			       ["div.product-logo", ["img", {src: logo, alt: "Logo of " + title}]],
 			       ["div.product-details", ["div.product-name", title], ["div.product-description", description]]]]])]];
 
-const makerCard = (maker) => 
+const makerCard = (maker) =>
       ["li.maker-card",
        ["a", {href: "#makers/" + maker},
 	["div.maker-block",
@@ -30,7 +30,8 @@ const product = ({title = "", description = "", logo = "", makers = [], launch_d
 	  ["div.product-image-container", ["img", {src: logo, alt: "Logo for " + title}]],
 	  ["div.product-text-content",
 	   ["h2", title],
-	   ["a", {href: website}, website],
+	   // ["div.product-link",["a", {href: website}, website]]
+		 
 	   ["h3.product-description", description]]],
 	 ["div.view-product-button", ["a", {href: website}, "View Product ↗︎"]]],
 	["ul.product-contacts",

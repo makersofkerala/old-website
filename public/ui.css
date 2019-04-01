@@ -207,6 +207,7 @@ header#main h2 {
 .product-text-content {
 
   padding-top: 20px;
+  width: 100%;
 }
 
 .product-makers {
@@ -693,12 +694,16 @@ padding-bottom: 2px;
   align-items: center;
   text-align: center;
   flex-direction: column;
+  width: 100%;
 }
 
-.product-text-content {
+
+
+.product-link {
   max-width: 200px;
 overflow: hidden;
 text-overflow: ellipsis;
+
 }
 
 .product-text-content a {
@@ -954,6 +959,11 @@ flex-direction: row;   }
 
 .telegram-broadcast {
   margin-left: 20px;
+}
+
+.product-text-content {
+
+  width: 100%;
 }
 
 
