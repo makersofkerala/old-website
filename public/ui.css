@@ -327,6 +327,7 @@ header#main h2 {
   margin-bottom: 1em;
   font-weight: 500;
   font-size: 14px;
+  white-space: nowrap;
 
 }
 
@@ -679,8 +680,11 @@ padding-bottom: 2px;
 .product-contacts {
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 1em;
+  grid-template-columns: auto auto;
+  margin-top: 2em;
+  grid-row-gap: 20px;
+
+  justify-content: space-between;
 }
 
 .product-name-details {
@@ -846,6 +850,11 @@ padding-bottom: 2px;
     /* width: 40.6666666667%;
     min-width: 210px;
     max-width: 280px; */
+  }
+
+  .product-contacts {
+    grid-template-columns: auto auto auto auto;
+
   }
 
     .product-details-container {
