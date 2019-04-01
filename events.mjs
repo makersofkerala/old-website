@@ -24,7 +24,7 @@ const event = ({title = "Untitled Event", from_date: date = new Date(), link = "
 };
 
 const details = ["div.website-details",
-		 ["div.logo", ["img", {alt: "Makers of Kerala Logo", src: "logo2.svg"}],
+		 ["div.logo", ["a", { href: "https://makersofkerala.com"},["img", {alt: "Makers of Kerala Logo", src: "logo2.svg"}]],
 		  ["h1", ["span.light","Makers"], ["em","of"], "Kerala"],
 		  ["h2.website-description", "List of maker events happening all over Kerala"]],
 		 ["div", ["div.newsletter-signup",

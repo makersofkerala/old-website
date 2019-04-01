@@ -696,12 +696,16 @@ padding-bottom: 2px;
 }
 
 .product-text-content {
-    /* width: 50%; */
+  max-width: 200px;
+background: beige;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 
 .product-text-content a {
 
   color: #5388E0;
+  white-space: nowrap;
 }
 .product-image-container {
 
