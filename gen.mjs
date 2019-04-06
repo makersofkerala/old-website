@@ -39,7 +39,7 @@ fs.writeFileSync(publicFolder + "makers.html", makerListingPage());
 
 // });
 
-console.log("Generated products page");
+console.log("Generated makers page");
 
 }
 

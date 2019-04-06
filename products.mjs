@@ -11,7 +11,7 @@ const productCard = ({id, title, description, link, logo}) =>
 
 const productListing = products => ["div.product-section", header("products"), ["ul.products-list", ...products.map(p => productCard(p))]];
 
-const makerCard = (maker) => 
+const makerCard = (maker) =>
       ["li.maker-card",
        ["a", {href: "#makers/" + maker},
 	["div.maker-block",
@@ -29,7 +29,8 @@ const product = ({title = "Untitled", description = "Description missing.", logo
 	  ["div.product-image-container", ["img", {src: logo, alt: "Logo for " + title}]],
 	  ["div.product-text-content",
 	   ["h2", title],
-	   ["a", {href: website}, website],
+	   // ["div.product-link",["a", {href: website}, website]]
+
 	   ["h3.product-description", description]]],
 	 ["div.view-product-button", ["a", {href: website}, "View Product ↗︎"]]],
 	["ul.product-contacts",
