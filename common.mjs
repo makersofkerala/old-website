@@ -1,10 +1,20 @@
 import * as z from './z.mjs';
+import * as f from './fun.mjs';
 
 const og = (props) => Object.entries(props).map(([k,v]) => ["meta", {property: `og:${k}`, content: `${v}`}]);
 
 const twitter = (props) => Object.entries(props).map(([k,v]) => ["meta", {name: `twitter:${k}`, content: `${v}`}]);
 
-const metaTitle = ["meta", {name: "title", "content": "Makers of Kerala: Uniting product makers all over Kerala, India"}];
+/*
+  entity: metaTitle,
+  state: {title: "Title goes here"},
+  view: ["meta", {name: "title", content: ":title"}]
+  
+merge(metaTitle, {state})
+
+*/
+
+const metaTitle = (title) => ["meta", {name: "title", "content": title}];
 
 const metaDescription =  ["meta", {name: "description", content: "A website to unite the daring makers in the digital domain all across the Kerala, India. Makers of Kerala is designed as a platform that catalogues the team, stack, and chronicles the timeline of startups from Kerala. It's overarching goal is to chronicle the unfolding narrative of the startup scene of Kerala."}];
 
@@ -34,21 +44,21 @@ const footer = ["footer",
 			     ["a.social-icon", {href:"https://facebook.com/makersofkerala"}, ["img", {src: "/facebook.svg"}]],],],
 			   ["section.copyright-section", ["div","© 2018-2019"],["div","Made by", ["a.studiobofa-link", {href: "https://studiobofa.com"},"Studiobofa"]]]]
 
-const header = ["header.nav-section",
+const header = (active) => ["header.nav-section",
 		["div.logo nav-section-logo",
 		 ["img", {alt: "Makers of Kerala Logo", src: "/logo2.svg"}],
 		 ["h1.products-heading",
 		  ["span.light","Makers"], ["em","of"], "Kerala"]],
 		["nav",
 		 ["ul.nav-list",
-		  ["li",["a", {href: "/products/"}, "Products"]],
-		  // ["li",["a",  {href: "/makers/"}, "Makers"]],
+		  ["li",["a" + (active == "products" ? ".active" : ""), {href: "/products/"}, "Products"]],
+		  ["li",["a" + (active == "makers" ? ".active" : ""),  {href: "/makers/"}, "Makers"]],
 		  // ["li",["a", {href: "/hackathons/"}, "Hackathons"]],
-		  ["li",["a", {href: "/events/"}, "Events"]],
+		  ["li",["a" + (active == "events" ? ".active" : ""), {href: "/events/"}, "Events"]],
 		//  ["li",["a",  {href: "/resources/"}, "Resources"]]
 		 ]]];
 
-const buildPage = (page) => z.doc([metaTitle,
+const buildPage = (page) => z.doc([metaTitle("Makers of Kerala: Uniting product makers all over Kerala, India"),
 metaDescription,
 metaCharset,
 metaViewport,

@@ -4,10 +4,15 @@ import  { header, buildPage } from "./common.mjs";
 const event = ({title = "Untitled Event", from_date: date = new Date(), link = "", cover = "", venue}) => {
 
     const parsedDate = new Date(Date.parse(date));
+
     const monthFormat = new Intl.DateTimeFormat("en-US", {month: "short"});
+
     const month = monthFormat.format(parsedDate);
+    
     const {day, year} = {day: parsedDate.getDate(), year: parsedDate.getFullYear()};
+
     var firstCharacters = title.match(/\b(\w)/g);
+
     var acronym = firstCharacters.join('');
 
     return ["li", ["a.event-board", {href: link},
@@ -36,7 +41,7 @@ const details = ["div.website-details",
 		  ["div.copyright", ["div", "© 2018"],["div", "Made by ", ["a.studiobofa-link", {href: "https://studiobofa.com"}, "Studio", ["strong", "BOFA"]]]]]];
 
 const page = (events) => buildPage(["div.event-section",
-				    header,
+				    header("events"),
 
 				     ["ul.event-list", ...events.map(eObj => event(eObj))]]);
 
