@@ -31,13 +31,13 @@ const product = ({title = "", description = "", logo = "", makers = [], launch_d
 	  ["div.product-text-content",
 	   ["h2", title],
 	   // ["div.product-link",["a", {href: website}, website]]
-		 
+
 	   ["h3.product-description", description]]],
 	 ["div.view-product-button", ["a", {href: website}, "View Product ↗︎"]]],
 	["ul.product-contacts",
-	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/location.svg"}], location]],
-	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/mail.svg"}], mail]],
-	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/twitter1.svg"}], twitter_link]],
+	 ["li", ["a.contact-list", {href: "https://makersofkerala.com"}, ["img.product-contacts-icon", {src: "/location.svg"}], location]],
+	 ["li", ["a.contact-list", {href: "https://makersofkerala.com"}, ["img.product-contacts-icon", {src: "/mail.svg"}], mail]],
+	 ["li", ["a.contact-list", {href: "https://makersofkerala.com"}, ["img.product-contacts-icon", {src: "/twitter1.svg"}], twitter_link]],
 	 ["li", ["a.contact-list", {href: "https://producthunt.com"}, ["img.product-contacts-icon", {src: "/product-hunt.svg"}], ph_link]]]],
        ["section.sections-container",
 	["div.section-header", "Makers"],
