@@ -351,7 +351,7 @@ header#main h2 {
 
 .makers-container li:nth-child(3) {
 
-  margin-right: 0;
+  /* margin-right: 0; */
 }
 
 .makers-container {
