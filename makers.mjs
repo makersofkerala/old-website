@@ -30,7 +30,7 @@ const makerListing = (makers = []) => ["div.maker-section", header("makers"),
 
 ]];
 
-const maker = () => ["div", "Maker details here"];
+const maker = () => ["div.maker-section", header("makers"), "Maker details here"];
 
 const makerPage = (products) => buildPage(maker(products));
 
