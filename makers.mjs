@@ -3,15 +3,34 @@ import * as z from './z.mjs';
 import  { buildPage, header } from "./common.mjs";
 
 const makerCard = ({id, title, description, link, logo}) =>
-      ["li.product-card",
-       ["a", {href: "/product/" + id + ".html"},
-	["div.product-block",
-	 ["div.product-logo", ["img", {src: logo, alt: "Logo of " + title}]],
-	 ["div.product-details", ["div.product-name", title], ["div.product-description", description]]]]];
+      ["li.maker-card",
+       ["a", {href: "/maker/" + id + ".html"},
+	["div.maker-block",
+	 ["div.maker-avatar", ["img", {src: logo, alt: "Avatar of " + title}]],
+	 ["div.maker-details", ["div.maker-name", title], ["div.maker-role", description]]]]];
 
-const makerListing = (makers = []) => ["div.maker-section", header("makers"), ["ul.makers-list", ...makers.map(m => makerCard(m))]];
+const makerListing = (makers = []) => ["div.maker-section", header("makers"),
 
-const maker = () => ["div.maker-section", header("makers"), ["div", "Maker details here"]];
+
+["ul.makers-list",
+  ["li.maker-card",
+  ["a", {href: "#makers/"},
+  ["div.maker-block",
+  ["div.maker-avatar", ["img", {src: "/avatar.svg", alt: "Avatar of"}]],
+  ["div.maker-details",
+  ["div.maker-name", "Jovis Joseph"],
+  ["div.maker-role", "Maker"]]]]],
+  ["li.maker-card",
+  ["a", {href: "#makers/"},
+  ["div.maker-block",
+  ["div.maker-avatar", ["img", {src: "/avatar.svg", alt: "Avatar of"}]],
+  ["div.maker-details",
+  ["div.maker-name", "Jovis Joseph"],
+  ["div.maker-role", "Maker"]]]]]
+
+]];
+
+const maker = () => ["div", "Maker details here"];
 
 const makerPage = (products) => buildPage(maker(products));
 
