@@ -12,7 +12,7 @@ const productCard = ({id, title, description, link, logo}) =>
 const productListing = products => ["div.product-section", header("products"), ["ul.products-list", ...products.map(p => productCard(p))]];
 
 const makerCard = (maker) =>
-      ["li.maker-card",
+      ["li.maker-card.product-maker-card",
        ["a", {href: "#makers/" + maker},
 	["div.maker-block",
 	 ["div.maker-avatar", ["img", {src: "/avatar.svg", alt: "Avatar of " + maker}]],
