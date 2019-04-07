@@ -2,6 +2,54 @@ import * as z from './z.mjs';
 
 import  { buildPage, header } from "./common.mjs";
 
+/*
+entity: "card",
+style:
+{position: "relative",
+border-radius: "8px",
+overflow: "hidden",
+box-shadow: "0px 4px 12px rgba(196, 207, 218, 0.45)",
+transition: "0.15s box-shadow ease",
+background: "white"}
+
+entity: "product-block",
+style: {display: flex; padding: 1rem 1.25rem}
+view: ["div", @productLogo, @productDetails]
+
+entity: "product-logo",
+style: {width: 80px; height: 80px;}
+["div", ["img", {src: logo, alt: "Logo of " + title}]]
+
+entity: "product-details",
+style: {padding-left: 1.25rem}
+["div", product-name, product-description]]
+
+@product-name
+ui: "@div (text:title)"
+
+style: {font-weight: 600; margin-bottom: 10px;}
+
+@product-description
+ui: "@div (text:description)"
+
+style {opacity: 0.5; font-size: 13px; height: 33px; overflow: hidden; line-height: 1.3;}
+
+@product-card
+data: {id, title, description, link: genLink(), logo,
+actions: {genLink: ({id}) => "/product/" + id + ".html"},
+productBlock: ({logo, title, description}) => merge(productBlock, {logo,title,description})},
+view: ["li", ["a", {href: ":link"}, ":productBlock"]]
+
+@list
+data: {items, itemView}
+view: ["ul", pc.map(items, itemView)]
+
+@productList
+components: [list]
+view: merge(list, {itemView: "@product-card", items: [products]});
+
+*/
+
 const productCard = ({id, title, description, link, logo}) =>
       ["li.product-card",
        ["a", {href: "/product/" + id + ".html"},
@@ -35,7 +83,7 @@ const product = ({title = "Untitled", description = "Description missing.", logo
 	 ["div.view-product-button", ["a", {href: website}, "View Product ↗︎"]]],
 	["ul.product-contacts",
 	 ["li", ["span.contact-list", ["img.product-contacts-icon", {src: "/location.svg"}], location]],
-	 ["li", ["a.contact-list", {href: mail}, ["img.product-contacts-icon", {src: "/mail.svg"}], "Mail"]],
+	 ["li", ["a.contact-list", {href: "mailto:" + mail}, ["img.product-contacts-icon", {src: "/mail.svg"}], "Mail"]],
 	 ["li", ["a.contact-list", {href: twitter_link}, ["img.product-contacts-icon", {src: "/twitter1.svg"}], "Twitter"]],
 	 ["li", ["a.contact-list", {href: ph_link}, ["img.product-contacts-icon", {src: "/product-hunt.svg"}], "Product Hunt"]]]],
        ["section.sections-container",
