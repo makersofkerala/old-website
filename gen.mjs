@@ -33,6 +33,8 @@ const buildMakerPage = async ()  => {
 
 fs.writeFileSync(publicFolder + "makers.html", makerListingPage());
 
+fs.writeFileSync(publicFolder + "maker.html", makerPage());
+
 // products.map(p => {
 
 // fs.writeFileSync(publicFolder + "product/" + p.id + ".html", makerPage(p));

@@ -11,7 +11,7 @@ const makerCard = ({id, title, description, link, logo}) =>
 
 const makerListing = (makers = []) => ["div.maker-section", header("makers"), ["ul.makers-list", ...makers.map(m => makerCard(m))]];
 
-const maker = () =>["div", "Maker details here"];
+const maker = () => ["div.maker-section", header("makers"), ["div", "Maker details here"]];
 
 const makerPage = (products) => buildPage(maker(products));
 
