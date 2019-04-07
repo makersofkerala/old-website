@@ -285,13 +285,24 @@ header#main h2 {
 
 }
 
+.nav-list li {
+    padding: 0.5rem 0;
+}
+
 .nav-list a {
 
   padding: 0 10px;
   text-transform: uppercase;
   color: #3F7ADC;
+  padding: 0.25rem 1rem;
   transition: 0.15s color ease;
   font-size: 14px;
+}
+
+.nav-list li a.active {
+    background: #3F7ADC;
+    color: white;
+    border-radius: 1rem;
 }
 
 .nav-list a:hover {
