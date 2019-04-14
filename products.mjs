@@ -1,6 +1,6 @@
 import * as z from './z.mjs';
 
-import  { buildPage, header, makerCard } from "./common.mjs";
+import  { buildPage, header, placeholderMakerCard } from "./common.mjs";
 
 const productCard = ({id = "N/A", title = "Untitled", description = "Description missing", link = "", logo = "logo.png"}) => {
     
@@ -17,7 +17,6 @@ const productListing = products => ["div.product-section",
 				   ["ul.products-list", ...products.map(p => productCard(p))]];
 
 const productDetails = ({logo = "N/A", title = "N/A", description = "N/A", website = "N/A"}) => ["div.product-details-container",
-												 (console.log(logo), ""),
 								 ["div.product-name-details",
 								  ["div.product-image-container", ["img", {src: logo, alt: "Logo for " + title}]],
 								  ["div.product-text-content",
@@ -36,7 +35,7 @@ const productContainer = (product) => ["div.product-head", productDetails(produc
 
 const makerListing = ({ makers }) => ["section.sections-container",
 				  ["div.section-header", "Makers"],
-				  ["ul.makers-container", ...makers.map(maker => makerCard(maker))]];
+				  ["ul.makers-container", ...makers.map(maker => placeholderMakerCard(maker))]];
 
 const productView = (product) => ["div.product-section", header("products"), productContainer(product), makerListing(product)]; 
 
