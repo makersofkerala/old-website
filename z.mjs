@@ -2,7 +2,7 @@ import * as f from './fun.mjs';
 
 /* Checks */
 
-const isTextNode = n => (typeof n == "string" || typeof n == "number");
+const isTextNode = n => (typeof n == "string" || typeof n == "number" || typeof n === "undefined");
 
 const areAttrs = attrs => (typeof attrs == "object" && !Array.isArray(attrs));
 
