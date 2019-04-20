@@ -1,5 +1,5 @@
 import * as xila from 'xila';
-import { buildEvents, buildProductPage, buildMakerPage } from './gen.mjs';
+import { buildEvents, buildProductPage, buildMakerPage, buildResourcesPage, buildPocketStartupSchoolPage } from './gen.mjs';
 
 const PORT = process.argv.slice(2)[0] || 8000;
 
@@ -15,5 +15,7 @@ console.log("Starting server on " + PORT);
 buildEvents();
 buildMakerPage();
 buildProductPage();
+buildResourcesPage();
+buildPocketStartupSchoolPage();
 
 server.listen(PORT);
