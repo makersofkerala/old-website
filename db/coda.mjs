@@ -22,6 +22,8 @@ const getProducts = async () => {
 
     const products = await getTable("jFO1OMp-Lg", "grid-qpxPv9odSr");
 
+    const makers = await getMakers();
+
     const selectors = ["Title", "Description", "Logo", "Makers", "Launch Date", "Website", "PH Link", "Location", "Mail", "Twitter"];
 
     let selections = products.map(product => product.filter(selection => selectors.find(sel => sel == selection.column)));
@@ -30,7 +32,9 @@ const getProducts = async () => {
 
     if(column == "Makers") {
 
-    value = value.split(",");
+    	     let makerNames = value.split(",").map(x => x.trim());
+
+    	     value = makers.filter(maker => makerNames.indexOf(maker.name) !== -1);
 
     }
     

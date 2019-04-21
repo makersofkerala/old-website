@@ -91,24 +91,14 @@ const siteHeader = [metaTitle("Makers of Kerala: Uniting product makers all over
 		    z.css("/ui.css"),
 		    ["script", {src: "ui.js", type: "text/javascript"}]];
 
-const placeholderMakerCard = (maker) => ["li.maker-card", ["a", {href: "#"},
-							   ["div.maker-block",
-							    ["div.maker-avatar", ["img", {src: "/avatar.svg", alt: "Avatar of" + maker}]],
-							    ["div.maker-details",
-							     ["div.maker-name", maker],
-							     ["div.maker-role", "Maker"]]]]];
-
-
-
-
-const makerCard = ({id, name, description, link, role, photo}) => ["li.maker-card",
-								    ["a", {href: "/maker/" + id + ".html"},
-								     ["div.maker-block",
-								      ["div.maker-avatar", ["img", {src: photo || "/avatar.svg", alt: "Avatar of" + name}]],
-								      ["div.maker-details",
-								       ["div.maker-name", name],
-								       ["div.maker-role", role]]]]];
+const makerCard = ({id, name, description, link = "#", role = "Maker", photo}) => ["li.maker-card",
+										   ["a", {href: "/maker/" + id + ".html"},
+										    ["div.maker-block",
+										     ["div.maker-avatar", ["img", {src: photo || "/avatar.svg", alt: "Avatar of" + name}]],
+										     ["div.maker-details",
+										      ["div.maker-name", name],
+										      ["div.maker-role", role]]]]];
 
 const buildPage = (page) => z.doc(siteHeader, [page, footer]);
 
-export { buildPage, footer, header, makerCard, placeholderMakerCard };
+export { buildPage, footer, header, makerCard };
