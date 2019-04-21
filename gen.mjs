@@ -5,6 +5,7 @@ import { makerPage, makerListingPage } from "./makers.mjs";
 import * as z from "./z.mjs";
 import { getProducts, getEvents,getMakers } from "./db/coda.mjs";
 import { page as resourcesPage } from "./resources.mjs"
+import {formatKey} from "./common.mjs"
 import { page as pocketSchoolPage } from "./pocket-startup-school.mjs"
 
 const publicFolder = "./public/";
@@ -56,7 +57,11 @@ const makers = await getMakers();
 
 fs.writeFileSync(publicFolder + "makers.html", makerListingPage(makers));
 
-fs.writeFileSync(publicFolder + "maker.html", makerPage());
+for(let maker of makers) {
+
+fs.writeFileSync(publicFolder + "makers/" + formatKey(maker.name) + ".html", makerPage(maker));
+
+}
 
 console.log("Generated makers page");
 

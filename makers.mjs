@@ -6,7 +6,7 @@ const makerList = (makers) => ["ul.makers-list", ...makers.map(maker => makerCar
 
 const makerListing = (makers = []) => ["div.maker-section", header("makers"), makerList(makers)];
 
-const maker = () => ["div.maker-section", header("makers"), "Maker details here"];
+const maker = (maker = {}) => ["div.maker-section", header("makers"), makerCard(maker)];
 
 const makerPage = (products) => buildPage(maker(products));
 

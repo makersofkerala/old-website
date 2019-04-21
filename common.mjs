@@ -1,6 +1,7 @@
 import * as z from './z.mjs';
 import * as f from './fun.mjs';
 
+const formatKey = (column = "") => column.toLowerCase().replace(/ /g, "_");
 const og = (props) => Object.entries(props).map(([k,v]) => ["meta", {property: `og:${k}`, content: `${v}`}]);
 
 const twitter = (props) => Object.entries(props).map(([k,v]) => ["meta", {name: `twitter:${k}`, content: `${v}`}]);
@@ -91,8 +92,8 @@ const siteHeader = [metaTitle("Makers of Kerala: Uniting product makers all over
 		    z.css("/ui.css"),
 		    ["script", {src: "ui.js", type: "text/javascript"}]];
 
-const makerCard = ({id, name, description, link = "#", role = "Maker", photo}) => ["li.maker-card",
-										   ["a", {href: "/maker/" + id + ".html"},
+const makerCard = ({id, name, description, link = "#", role = "Maker", photo} = {}) => ["li.maker-card",
+										   ["a", {href: "/makers/" + formatKey(name) + ".html"},
 										    ["div.maker-block",
 										     ["div.maker-avatar", ["img", {src: photo || "/avatar.svg", alt: "Avatar of" + name}]],
 										     ["div.maker-details",
@@ -101,4 +102,4 @@ const makerCard = ({id, name, description, link = "#", role = "Maker", photo}) =
 
 const buildPage = (page) => z.doc(siteHeader, [page, footer]);
 
-export { buildPage, footer, header, makerCard };
+export { buildPage, footer, header, makerCard, formatKey };
