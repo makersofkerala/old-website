@@ -98,13 +98,16 @@ const placeholderMakerCard = (maker) => ["li.maker-card", ["a", {href: "#"},
 							     ["div.maker-name", maker],
 							     ["div.maker-role", "Maker"]]]]];
 
-const makerCard = ({id, title, description, link, role, image}) => ["li.maker-card",
-							     ["a", {href: "/maker/" + id + ".html"},
-							      ["div.maker-block",
-							       ["div.maker-avatar", ["img", {src: image, alt: "Avatar of" + title}]],
-							       ["div.maker-details",
-								["div.maker-name", title],
-								["div.maker-role", role]]]]];
+
+
+
+const makerCard = ({id, name, description, link, role, photo}) => ["li.maker-card",
+								    ["a", {href: "/maker/" + id + ".html"},
+								     ["div.maker-block",
+								      ["div.maker-avatar", ["img", {src: photo || "/avatar.svg", alt: "Avatar of" + name}]],
+								      ["div.maker-details",
+								       ["div.maker-name", name],
+								       ["div.maker-role", role]]]]];
 
 const buildPage = (page) => z.doc(siteHeader, [page, footer]);
 

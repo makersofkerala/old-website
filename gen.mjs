@@ -3,7 +3,7 @@ import { page as eventPage } from "./events.mjs";
 import { productPage, productListingPage } from "./products.mjs";
 import { makerPage, makerListingPage } from "./makers.mjs";
 import * as z from "./z.mjs";
-import {getProducts, getEvents} from "./db/coda.mjs";
+import { getProducts, getEvents,getMakers } from "./db/coda.mjs";
 import { page as resourcesPage } from "./resources.mjs"
 import { page as pocketSchoolPage } from "./pocket-startup-school.mjs"
 
@@ -52,17 +52,11 @@ console.log("Generated products page");
 
 const buildMakerPage = async ()  => {
 
-// const products = await getProducts();
+const makers = await getMakers();
 
-fs.writeFileSync(publicFolder + "makers.html", makerListingPage());
+fs.writeFileSync(publicFolder + "makers.html", makerListingPage(makers));
 
 fs.writeFileSync(publicFolder + "maker.html", makerPage());
-
-// products.map(p => {
-
-// fs.writeFileSync(publicFolder + "product/" + p.id + ".html", makerPage(p));
-
-// });
 
 console.log("Generated makers page");
 

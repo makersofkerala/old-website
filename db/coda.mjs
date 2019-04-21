@@ -45,18 +45,32 @@ const getProducts = async () => {
     
 };
 
-const getEvents = async () => {
+const selectColumns = (entity, selectors) =>  {
 
-    const events = await getTable("jFO1OMp-Lg", "grid-6unYzcrKtZ");
+let selections = entity.map(e => e.filter(table => selectors.find(selection =>  selection === table.column)));
 
-    const selectors = ["Title", "Venue", "From Date"];
+return selections.map(cols => cols.reduce((i, {column, value}) => Object.assign(i, {[formatKey(column)]: value}), {}));
 
-    let selections = events.map(event => event.filter(selection => selectors.find(sel => sel == selection.column)));
-
-    let result = selections.map(event => event.reduce((i, {column, value}) => Object.assign(i, {[formatKey(column)]: value}), {}));
-
-    return result;
-    
 }
 
-export { getProducts, getEvents };
+const getEvents = async () => {
+
+const events = await getTable("jFO1OMp-Lg", "grid-6unYzcrKtZ");
+
+const selectors = ["Title", "Venue", "From Date"];
+
+return selectColumns(events, selectors);
+
+};
+
+const getMakers = async () => {
+
+const makers = await getTable("jFO1OMp-Lg", "grid-LwgQyOmtdm");
+
+const selectors = ["Photo", "Name", "Role"];
+
+return selectColumns(makers, selectors);
+
+}
+
+export { getProducts, getEvents, getMakers };
