@@ -2,6 +2,7 @@ import * as z from './z.mjs';
 import * as f from './fun.mjs';
 
 const formatKey = (column = "") => column.toLowerCase().replace(/ /g, "_");
+
 const og = (props) => Object.entries(props).map(([k,v]) => ["meta", {property: `og:${k}`, content: `${v}`}]);
 
 const twitter = (props) => Object.entries(props).map(([k,v]) => ["meta", {name: `twitter:${k}`, content: `${v}`}]);
@@ -48,7 +49,7 @@ const followUs =  ["section.follow-us-section footer-section",
 		   socialMediaIcons];
 
 const signupContainer = ["div.signup-button-container",
-			 ["a.whatsapp-group signup-button", {href:"https://chat.whatsapp.com/HufqsS5FLgJ9DHRRNSUfrc"},"Join our Whatsapp Group"],
+			 ["a.whatsapp-group signup-button", {href:"https://chat.whatsapp.com/BiGaH2wFENzKW6dUCIj0Ot"}, "Join our Whatsapp Group"],
 			 ["a.telegram-broadcast signup-button", {href:"https://t.me/makersofkerala"},"Join our Telegram Broadcast"]];
 
 const footer = ["footer",
