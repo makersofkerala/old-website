@@ -49,7 +49,7 @@ const followUs =  ["section.follow-us-section footer-section",
 		   socialMediaIcons];
 
 const signupContainer = ["div.signup-button-container",
-			 ["a.whatsapp-group signup-button", {href:"https://chat.whatsapp.com/BiGaH2wFENzKW6dUCIj0Ot"}, "Join our Whatsapp Group"],
+			 ["a.whatsapp-group signup-button", {href:"https://bit.ly/makerswhatsapp"}, "Join our Whatsapp Group"],
 			 ["a.telegram-broadcast signup-button", {href:"https://t.me/makersofkerala"},"Join our Telegram Broadcast"]];
 
 const footer = ["footer",
